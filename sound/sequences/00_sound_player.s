@@ -2221,7 +2221,7 @@ chan_setlayer 0, .layer_CF8
 chan_end
 
 .layer_CF8:
-layer_note1 40, 0x35, 127
+layer_note1 40, 0x40, 127
 layer_end
 
 .sound_mario_yawning:
