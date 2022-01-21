@@ -28,7 +28,7 @@
 #include "sound_init.h"
 #include "rumble_init.h"
 
-// TODO: put this elsewhere
+// TODO: put this elsewhere cock test
 enum SaveOption { SAVE_OPT_SAVE_AND_CONTINUE = 1, SAVE_OPT_SAVE_AND_QUIT, SAVE_OPT_CONTINUE_DONT_SAVE };
 
 static struct Object *sIntroWarpPipeObj;
