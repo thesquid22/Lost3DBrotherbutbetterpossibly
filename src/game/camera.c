@@ -10256,7 +10256,7 @@ BAD_RETURN(s32) cutscene_door_move_behind_mario(struct Camera *c) {
     set_fov_function(CAM_FOV_SET_45);
 
     if (doorRotation == 0) { //! useless code
-        camOffset[0] = -64.f;
+        camOffset[0] = 64.f;
     } else {
         camOffset[0] = -64.f;
     }
