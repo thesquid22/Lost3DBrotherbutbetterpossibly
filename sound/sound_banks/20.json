@@ -1,0 +1,52 @@
+{
+    "date": "1996-03-19",
+    "sample_bank": "instruments",
+    "envelopes": {
+        "envelope0": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope1": [
+            [2, 32700],
+            [205, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope2": [
+            [11, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope3": [
+        [6, 32700],
+        [298, 0],
+        [1, 0],
+        "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 34,
+            "envelope": "envelope2",
+            "sound": "44_grand_piano"
+        },
+        "inst1": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "46_pizzicato_strings_1"
+        },
+        "inst2": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "21_sine_bass"
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2"
+    ]
+}
