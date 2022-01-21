@@ -117,12 +117,13 @@ ALIGNED8 static const u8 mario_texture_metal_wings_half_2[] = {
 /*	Luigi gfx list.																*/
 /********************************************************************************/
 
-#define SCALE  4
+#include "gex.h"
 
-#define LIGHT_X 0
-#define LIGHT_Y 0
-#define LIGHT_Z 127
-#define ShapeColor_mario(r,g,b) gdSPDefLights1(r/SCALE,g/SCALE,b/SCALE,r,g,b,LIGHT_X,LIGHT_Y,LIGHT_Z)
+#define		G_CC_MARIO_MAPPING		TEXEL0, SHADE, TEXEL0_ALPHA, SHADE,  0,0,0,ENVIRONMENT
+#define		G_CC_MARIO_NORMAL			 0,		 0,			  0, SHADE,  0,0,0,ENVIRONMENT
+
+#define	SCALE	4
+#define ShapeColor_mario(R,G,B) {{R/SCALE ,G/SCALE ,B/SCALE ,0 ,R/SCALE ,G/SCALE ,B/SCALE ,0 },{ R, G, B, 0, R, G, B, 0, 0x28, 0x28, 0x28, 0}}
 
 /********************************************************************************/
 /*	Luigi near body																*/ 																
