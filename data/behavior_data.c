@@ -853,7 +853,9 @@ const BehaviorScript bhvWhitePuffExplosion[] = {
 const BehaviorScript bhvSpawnedStar[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-	BILLBOARD(),
+    BILLBOARD(),
+    SET_INT(oBehParams2ndByte, 1),
+    GOTO(bhvSpawnedStarNoLevelExit + 1 + 1),
     CALL_NATIVE(bhv_init_room),
     CALL_NATIVE(bhv_collect_star_init),
     BEGIN_LOOP(),
@@ -4751,13 +4753,15 @@ const BehaviorScript bhvHiddenStar[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
 	BILLBOARD(),
-    CALL_NATIVE(bhv_init_room),
-    CALL_NATIVE(bhv_collect_star_init),
+    //CALL_NATIVE(bhv_init_room),
+    //CALL_NATIVE(bhv_collect_star_init),
     BEGIN_LOOP(),
+        CALL_NATIVE(bhv_hidden_star_loop),
         CALL_NATIVE(bhv_collect_star_loop),
 		ANIMATE_TEXTURE(oAnimState, 2),
     END_LOOP(),
 };
+
 
 const BehaviorScript bhvHiddenStarTrigger[] = {
     BEGIN(OBJ_LIST_LEVEL),

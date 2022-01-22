@@ -1261,11 +1261,9 @@ print_text_fmt_int(210, 56, "Z %d", m->pos[2]);
  * Update the button inputs for Mario.
  */
 void update_mario_button_inputs(struct MarioState *m) {
-    #ifdef DEBUG
     if (m->action != ACT_DEBUG_FREE_MOVE && m->controller->buttonPressed & L_JPAD) {
         set_mario_action(m, ACT_DEBUG_FREE_MOVE, 0);
     }
-    #endif
 
     if (m->controller->buttonPressed & A_BUTTON) {
         m->input |= INPUT_A_PRESSED;
