@@ -3922,6 +3922,17 @@ const BehaviorScript bhvButterfly[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvHootEgg[] = {
+    BEGIN(OBJ_LIST_LEVEL),
+    BILLBOARD(),
+    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+	DROP_TO_FLOOR(),
+	CALL_NATIVE(bhv_hoot_egg_true_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_hoot_egg_loop),
+    END_LOOP(),
+};
+
 const BehaviorScript bhvHoot[] = {
     BEGIN(OBJ_LIST_POLELIKE),
     OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
