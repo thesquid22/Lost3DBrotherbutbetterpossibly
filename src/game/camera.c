@@ -1460,7 +1460,7 @@ s32 update_fixed_camera(struct Camera *c, Vec3f focus, UNUSED Vec3f pos) {
             heightOffset = 0.f;
             break;
 
-        case AREA_CASTLE_LOBBY:
+        case AREA_CASTLE_TIPPY:
             scaleToMario = 0.3f;
             heightOffset = 0.f;
             break;
@@ -3363,7 +3363,8 @@ void init_camera(struct Camera *c) {
             marioOffset[2] = 200.f;
             break;
         case LEVEL_CASTLE_COURTYARD:
-            marioOffset[2] = -300.f;
+            c->nextYaw = mode_behind_mario(c);
+            sFOVState.fov = 20.f;
             break;
         case LEVEL_LLL:
             gCameraMovementFlags |= CAM_MOVE_ZOOMED_OUT;
@@ -5585,7 +5586,7 @@ void set_fixed_cam_axis_sa_lobby(UNUSED s16 preset) {
             vec3f_set(sFixedModeBasePosition, 646.f, 143.f, -1513.f);
             break;
 
-        case AREA_CASTLE_LOBBY:
+        case AREA_CASTLE_TIPPY:
             vec3f_set(sFixedModeBasePosition, -2047.f, 143.f, 1229.f);
             break;
     }
@@ -6243,7 +6244,6 @@ struct CameraTrigger sCamCCM[] = {
  * and one trigger that starts the enter pool cutscene when Mario enters HMC.
  */
 struct CameraTrigger sCamCastle[] = {
-	{3, cam_castle_enter_lobby, 1289, -13, -1599, 247, 1452, 832, 0xffff},
 	{2, cam_castle_close_mode, 2082, -659, -6, 281, 281, 281, 0xffff},
 	{2, cam_castle_enter_lobby, 705, 0, 0, 214, 214, 214, 0xffff},
 	{2, cam_castle_enter_lobby, -513, -319, 1806, 258, 258, 258, 0xffff},
@@ -6340,6 +6340,9 @@ struct CameraTrigger sCamCastleGrounds[] = {
 	NULL_TRIGGER
 };
 struct CameraTrigger sCamLLL[] = {
+	NULL_TRIGGER
+};
+struct CameraTrigger sCamPSS[] = {
 	NULL_TRIGGER
 };
 struct CameraTrigger *sCameraTriggers[LEVEL_COUNT + 1] = {
@@ -10782,7 +10785,7 @@ u8 sZoomOutAreaMasks[] = {
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // Unused         | Unused
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // Unused         | Unused
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // BBH            | CCM
-	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 0, 0, 0, 0), // CASTLE_INSIDE  | HMC
+	ZOOMOUT_AREA_MASK(0, 0, 0, 1, 0, 0, 0, 0), // CASTLE_INSIDE  | HMC
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SSL            | BOB
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SL             | WDW
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 1, 0, 0), // JRB            | THI
@@ -10792,7 +10795,7 @@ u8 sZoomOutAreaMasks[] = {
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // SA             | BITS
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // LLL            | DDD
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 0, 0, 0, 0), // WF             | ENDING
-	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // COURTYARD      | PSS
+	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // COURTYARD      | PSS
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // COTMC          | TOTWC
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // BOWSER_1       | WMOTR
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // Unused         | BOWSER_2

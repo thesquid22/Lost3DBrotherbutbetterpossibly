@@ -1216,8 +1216,9 @@ s32 init_level(void) {
 
         if (val4 != 0) {
             play_transition(WARP_TRANSITION_FADE_FROM_COLOR, 0x5A, 0xFF, 0xFF, 0xFF);
+            set_mario_action(gMarioState, ACT_SLEEPING, 0);
         } else {
-            play_transition(WARP_TRANSITION_FADE_FROM_STAR, 0x10, 0xFF, 0xFF, 0xFF);
+            play_transition(WARP_TRANSITION_FADE_FROM_STAR, 0x10, 0x00, 0x00, 0x00);
         }
 
         if (gCurrDemoInput == NULL) {
