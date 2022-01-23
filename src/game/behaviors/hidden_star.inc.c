@@ -13,6 +13,7 @@ void bhv_hidden_star_init(void) {
     }
 
     o->oHiddenStarTriggerCounter = 5 - sp36;
+    cur_obj_scale(1.5f);
 }
 
 void bhv_hidden_star_loop(void) {
@@ -30,6 +31,7 @@ void bhv_hidden_star_loop(void) {
             }
             break;
     }
+    cur_obj_scale(1.5f); 
 }
 
 /* TODO: this is likely not a checkpoint but a Secret */
@@ -72,4 +74,5 @@ void bhv_bowser_course_red_coin_star_loop(void) {
             }
             break;
     }
+    cur_obj_scale(1.5f);
 }

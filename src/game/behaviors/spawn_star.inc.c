@@ -34,9 +34,11 @@ void bhv_collect_star_loop(void) {
         mark_obj_for_deletion(o);
         o->oInteractStatus = 0;
     }
+    cur_obj_scale(1.5f);
 }
 
 void bhv_star_spawn_init(void) {
+    cur_obj_scale(1.5f);
     o->oMoveAngleYaw = atan2s(o->oHomeZ - o->oPosZ, o->oHomeX - o->oPosX);
     o->oStarSpawnDisFromHome = sqrtf(sqr(o->oHomeX - o->oPosX) + sqr(o->oHomeZ - o->oPosZ));
     o->oVelY = (o->oHomeY - o->oPosY) / 30.0f;
@@ -107,6 +109,7 @@ void bhv_star_spawn_loop(void) {
             }
             break;
     }
+    cur_obj_scale(1.5f);
 }
 
 struct Object *spawn_star(struct Object *sp30, f32 sp34, f32 sp38, f32 sp3C) {
@@ -125,6 +128,7 @@ void spawn_default_star(f32 sp20, f32 sp24, f32 sp28) {
     struct Object *sp1C;
     sp1C = spawn_star(sp1C, sp20, sp24, sp28);
     sp1C->oBehParams2ndByte = 0;
+    cur_obj_scale(1.5f);
 }
 
 void spawn_red_coin_cutscene_star(f32 sp20, f32 sp24, f32 sp28) {
@@ -174,4 +178,5 @@ void bhv_hidden_red_coin_star_loop(void) {
             }
             break;
     }
+    cur_obj_scale(1.5f);
 }
