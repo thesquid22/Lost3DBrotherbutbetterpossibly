@@ -792,6 +792,36 @@ s32 act_grabbed(struct MarioState *m) {
     return FALSE;
 }
 
+s32 act_swinging(struct MarioState *m) {
+    if ((m->input & INPUT_NONZERO_ANALOG) && m->actionTimer >= 31) {
+        return set_mario_action(m, ACT_SWINGING, 0);
+    }
+
+    if (!(m->input & INPUT_A_DOWN)) {
+        return set_mario_action(m, ACT_FREEFALL, 0);
+    }
+
+    if (m->input & INPUT_Z_PRESSED) {
+        return set_mario_action(m, ACT_GROUND_POUND, 0);
+    }
+
+    if (m->ceil->type != SURFACE_SWINGABLE_POLE) {
+        return set_mario_action(m, ACT_FREEFALL, 0);
+    }
+
+    set_mario_animation(m, MARIO_ANIM_SWINGING);
+    play_sound_if_no_flag(m, SOUND_ACTION_HANGING_STEP, MARIO_ACTION_SOUND_PLAYED);
+    // update_hang_stationary(m);
+
+    if (is_anim_at_end(m)) {
+        set_mario_action(m, ACT_SWINGING, 0);
+    }
+
+    return FALSE;
+
+}
+
+
 s32 act_in_cannon(struct MarioState *m) {
     struct Object *marioObj = m->marioObj;
     s16 startFacePitch = m->faceAngle[0];
@@ -1000,6 +1030,7 @@ s32 mario_execute_automatic_action(struct MarioState *m) {
         case ACT_IN_CANNON:              cancel = act_in_cannon(m);              break;
         case ACT_TORNADO_TWIRLING:       cancel = act_tornado_twirling(m);       break;
         case ACT_CLIMBING_WALL:          cancel = act_climbing_wall(m);    		 break;
+        case ACT_SWINGING:               cancel = act_swinging(m);               break;
     }
     /* clang-format on */
 

@@ -150,6 +150,7 @@
 #define SURFACE_WOBBLING_WARP                0x00FD // Pool warp (HMC & DDD)
 #define SURFACE_CLIMBABLE_WALL               0x00FE // Climbable Wall
 #define SURFACE_TRAPDOOR                     0x00FF // Bowser Left trapdoor, has no action defined
+#define SURFACE_SWINGABLE_POLE               0x0100 // Swingable oriented pole
 
 #define SURFACE_IS_QUICKSAND(cmd)     (cmd >= 0x21 && cmd < 0x28)   // Doesn't include SURFACE_INSTANT_MOVING_QUICKSAND
 #define SURFACE_IS_NOT_HARD(cmd)      (cmd != SURFACE_HARD && \
