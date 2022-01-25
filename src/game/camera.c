@@ -1460,7 +1460,7 @@ s32 update_fixed_camera(struct Camera *c, Vec3f focus, UNUSED Vec3f pos) {
             heightOffset = 0.f;
             break;
 
-        case AREA_CASTLE_TIPPY:
+        case AREA_CASTLE_LOBBY:
             scaleToMario = 0.3f;
             heightOffset = 0.f;
             break;
@@ -5587,7 +5587,7 @@ void set_fixed_cam_axis_sa_lobby(UNUSED s16 preset) {
             break;
 
         case AREA_CASTLE_TIPPY:
-            vec3f_set(sFixedModeBasePosition, -2047.f, 143.f, 1229.f);
+            vec3f_set(sFixedModeBasePosition, -2047.f, 143.f, 0.f);
             break;
     }
 }
@@ -6244,13 +6244,12 @@ struct CameraTrigger sCamCCM[] = {
  * and one trigger that starts the enter pool cutscene when Mario enters HMC.
  */
 struct CameraTrigger sCamCastle[] = {
-	{2, cam_castle_close_mode, 2082, -659, -6, 281, 281, 281, 0xffff},
-	{2, cam_castle_enter_lobby, 705, 0, 0, 214, 214, 214, 0xffff},
-	{2, cam_castle_enter_lobby, -513, -319, 1806, 258, 258, 258, 0xffff},
-	{2, cam_castle_enter_lobby, -59, -662, 0, 286, 286, 286, 0xffff},
-	{2, cam_castle_enter_lobby, 356, -635, 1194, 170, 170, 170, 0xffff},
-	{2, cam_castle_enter_lobby, -531, -368, -1912, 196, 196, 196, 0xffff},
-	{2, cam_castle_enter_lobby, 234, -638, -1201, 217, 217, 217, 0xffff},
+	{2, cam_castle_close_mode, 3188, -659, -6, 281, 281, 281, 0xffff},
+	{2, cam_castle_enter_lobby, -84, 0, 0, 214, 214, 214, 0xffff},
+	{2, cam_castle_enter_lobby, -976, -319, 1619, 258, 258, 258, 0xffff},
+	{2, cam_castle_enter_lobby, -71, -635, 1048, 170, 170, 379, 0xffff},
+	{2, cam_castle_enter_lobby, -928, -368, -1685, 196, 196, 196, 0xffff},
+	{2, cam_castle_enter_lobby, -159, -638, -1054, 217, 311, 385, 0xffff},
 	NULL_TRIGGER
 };
 
@@ -10015,8 +10014,8 @@ BAD_RETURN(s32) cutscene_exit_painting_start(struct Camera *c) {
     struct Surface *floor;
     f32 floorHeight;
 
-    vec3f_set(sCutsceneVars[2].point, 258.f, -352.f, 1189.f);
-    vec3f_set(sCutsceneVars[1].point, 65.f, -155.f, 444.f);
+    vec3f_set(sCutsceneVars[2].point, 258.f, 62.f, 1189.f);
+    vec3f_set(sCutsceneVars[1].point, 65.f, 65.f, 444.f);
 
     if (gPrevLevel == LEVEL_TTM) {
         sCutsceneVars[1].point[1] = 0.f;
@@ -10049,8 +10048,8 @@ BAD_RETURN(s32) cutscene_exit_painting_move_to_mario(struct Camera *c) {
     //!
     //! In the success cutscene, when Mario jumps out face-first, only his gfx angle is updated. His
     //! actual face angle isn't updated until after the cutscene.
-    approach_f32_asymptotic_bool(&sCutsceneVars[2].point[0], 178.f, 0.05f);
-    approach_f32_asymptotic_bool(&sCutsceneVars[2].point[2], 889.f, 0.05f);
+    approach_f32_asymptotic_bool(&sCutsceneVars[2].point[0], 190.f, 0.05f);
+    approach_f32_asymptotic_bool(&sCutsceneVars[2].point[2], 199.f, 0.05f);
     offset_rotated(pos, sCutsceneVars[0].point, sCutsceneVars[2].point, sCutsceneVars[0].angle);
     c->pos[0] = pos[0];
     c->pos[2] = pos[2];
@@ -10101,7 +10100,7 @@ BAD_RETURN(s32) cutscene_unused_exit_start(struct Camera *c) {
     Vec3f offset;
     Vec3s marioAngle;
 
-    vec3f_set(offset, 10.f, 0.f, 1180.f);
+    vec3f_set(offset, 10.f, 100.f, 1180.f);
     vec3s_set(marioAngle, 0, sMarioCamState->faceAngle[1], 0);
     offset_rotated(c->pos, sMarioCamState->pos, offset, marioAngle);
     set_focus_rel_mario(c, 0.f, 125.f, 0.f, 0);
@@ -10785,7 +10784,7 @@ u8 sZoomOutAreaMasks[] = {
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // Unused         | Unused
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // Unused         | Unused
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // BBH            | CCM
-	ZOOMOUT_AREA_MASK(0, 0, 0, 1, 0, 0, 0, 0), // CASTLE_INSIDE  | HMC
+	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // CASTLE_INSIDE  | HMC
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SSL            | BOB
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SL             | WDW
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 1, 0, 0), // JRB            | THI
