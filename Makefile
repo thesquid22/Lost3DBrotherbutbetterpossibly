@@ -667,7 +667,7 @@ $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 # Alternate compiler flags needed for matching
 ifeq ($(COMPILER),ido)
   $(BUILD_DIR)/levels/%/leveldata.o: OPT_FLAGS := -O2
-  $(BUILD_DIR)/actors/%.o:           OPT_FLAGS := -O3
+  $(BUILD_DIR)/actors/%.o:           OPT_FLAGS := -O2
   $(BUILD_DIR)/bin/%.o:              OPT_FLAGS := -O3
   $(BUILD_DIR)/src/goddard/%.o:      OPT_FLAGS := -O2
   $(BUILD_DIR)/src/goddard/%.o:      MIPSISET := -mips1
