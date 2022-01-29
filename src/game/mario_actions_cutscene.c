@@ -250,30 +250,10 @@ s32 get_star_collection_dialog(struct MarioState *m) {
 void handle_save_menu(struct MarioState *m) {
     s32 dialogID;
     // wait for the menu to show up
-    if (is_anim_past_end(m) && gSaveOptSelectIndex != 0) {
-        // save and continue / save and quit
-        if (gSaveOptSelectIndex == SAVE_OPT_SAVE_AND_CONTINUE || gSaveOptSelectIndex == SAVE_OPT_SAVE_AND_QUIT) {
-            save_file_do_save(gCurrSaveFileNum - 1);
-
-            if (gSaveOptSelectIndex == SAVE_OPT_SAVE_AND_QUIT) {
-                fade_into_special_warp(-2, 0); // reset game
-            }
-        }
-
-        // not quitting
-        if (gSaveOptSelectIndex != SAVE_OPT_SAVE_AND_QUIT) {
-            disable_time_stop();
-            m->faceAngle[1] += 0x8000;
-            // figure out what dialog to show, if we should
-            dialogID = get_star_collection_dialog(m);
-            if (dialogID != 0) {
-                play_peachs_jingle();
-                // look up for dialog
-                set_mario_action(m, ACT_READING_AUTOMATIC_DIALOG, dialogID);
-            } else {
-                set_mario_action(m, ACT_IDLE, 0);
-            }
-        }
+    if (is_anim_past_end(m)) {
+        disable_time_stop();
+        m->faceAngle[1] += 0x8000;
+        set_mario_action(m, ACT_IDLE, 0);
     }
 }
 
@@ -442,6 +422,14 @@ s32 act_disappeared(struct MarioState *m) {
     return FALSE;
 }
 
+extern s8 gDialogBoxState;
+enum DialogBoxState { // duplicate, todo
+    DIALOG_STATE_OPENING,
+    DIALOG_STATE_VERTICAL,
+    DIALOG_STATE_HORIZONTAL,
+    DIALOG_STATE_CLOSING
+};
+
 s32 act_reading_automatic_dialog(struct MarioState *m) {
     u32 actionArg;
 
@@ -466,21 +454,14 @@ s32 act_reading_automatic_dialog(struct MarioState *m) {
         }
         // wait until dialog is done
         else if (m->actionState == 10) {
-            if (get_dialog_id() >= 0) {
+            if (get_dialog_id() >= 0 && gDialogBoxState < DIALOG_STATE_CLOSING) {
                 m->actionState--;
             }
         }
-        // look back down
-        else if (m->actionState < 19) {
-            m->actionTimer += 1024;
-        }
-        // finished action
-        else if (m->actionState == 25) {
+
+        else if (m->actionState < 12) {
             disable_time_stop();
-            if (gNeverEnteredCastle) {
-                gNeverEnteredCastle = FALSE;
-                play_cutscene_music(SEQUENCE_ARGS(0, SEQ_LEVEL_INSIDE_CASTLE));
-            }
+
             if (m->prevAction == ACT_STAR_DANCE_WATER) {
                 set_mario_action(m, ACT_WATER_IDLE, 0); // 100c star?
             } else {
@@ -1135,8 +1116,8 @@ s32 act_exit_land_save_dialog(struct MarioState *m) {
                     enable_time_stop();
                 }
 
-                set_menu_mode(RENDER_COURSE_DONE_SCREEN);
-                gSaveOptSelectIndex = 0;
+                //set_menu_mode(RENDER_COURSE_DONE_SCREEN);
+                //gSaveOptSelectIndex = 0;
 
                 m->actionState = 3; // star exit with cap
                 if (!(m->flags & MARIO_CAP_ON_HEAD)) {
