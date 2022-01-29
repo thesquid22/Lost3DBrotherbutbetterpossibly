@@ -34,6 +34,8 @@ s16 gDialogY; // D_8032F69C
 s16 gCutsceneMsgXOffset;
 s16 gCutsceneMsgYOffset;
 s8 gRedCoinsCollected;
+s8 gDialogOptionsAvailable;
+s8 gDialogUseCustomOptionSet;
 
 extern u8 gLastCompletedCourseNum;
 extern u8 gLastCompletedStarNum;
@@ -114,11 +116,11 @@ s32 gDialogResponse = 0;
 // An array of stages to warp to, starts with 0 meaning "continue" or "quit".
 int g_stagesToWarpTo[] = {
 	0,
+	LEVEL_BOB,
 	LEVEL_WF,
-	LEVEL_LLL,
 	LEVEL_CCM,
 	LEVEL_DDD,
-	LEVEL_BOWSER_1,
+	LEVEL_ENDING,
 	0,
 };
 void OnPauseDialogEnd(int choice) {
@@ -128,7 +130,7 @@ void OnPauseDialogEnd(int choice) {
 	if (choice == 1)
 	{
 		// yes, just warp us to castle
-        initiate_warp(/*Level ID*/LEVEL_CASTLE, /*Area Num*/1, /*Warp Node*/0x1F, 0);
+        initiate_warp(/*Level ID*/LEVEL_CASTLE, /*Area Num*/2, /*Warp Node*/0x1F, 0);
         fade_into_special_warp(0, 0);
         gSavedCourseNum = 0;
 	}
@@ -1518,11 +1520,18 @@ void handle_dialog_text_and_pages(s8 colorMode, struct DialogEntry *dialog, s8 l
 #endif
 
 void render_dialog_triangle_choice(void) {
+    int dialogOptions = gDialogUseCustomOptionSet ? gDialogOptionsAvailable : 2;
     if (gDialogBoxState == DIALOG_STATE_VERTICAL) {
-        handle_menu_scrolling(MENU_SCROLL_HORIZONTAL, &gDialogLineNum, 1, 2);
+        handle_menu_scrolling(MENU_SCROLL_VERTICAL, &gDialogLineNum, 1, dialogOptions);
     }
 
-    create_dl_translation_matrix(MENU_MTX_NOPUSH, (gDialogLineNum * X_VAL4_1) - X_VAL4_2, Y_VAL4_1 - (gLastDialogLineNum * Y_VAL4_2), 0);
+    //create_dl_translation_matrix(MENU_MTX_NOPUSH, (gDialogLineNum * X_VAL4_1) - X_VAL4_2, Y_VAL4_1 - (gLastDialogLineNum * Y_VAL4_2), 0);
+
+	// set the X (horizontal) to 0 and make Y depend on the selected line
+	create_dl_translation_matrix(MENU_MTX_NOPUSH, 
+		0, // (gDialogLineNum * X_VAL4_1) - X_VAL4_2,
+		Y_VAL4_1 - (gLastDialogLineNum * Y_VAL4_2) + Y_VAL4_2 * dialogOptions - (gDialogLineNum * Y_VAL4_2), 
+		0);
 
     if (gDialogBoxType == DIALOG_TYPE_ROTATE) {
         gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
@@ -1764,8 +1773,8 @@ void render_dialog_entries(void) {
             }
 
             if (gDialogBoxType == DIALOG_TYPE_ROTATE) {
-                gDialogBoxOpenTimer -= 7.5;
-                gDialogBoxScale -= 1.5;
+                gDialogBoxOpenTimer -= 5.0;
+                gDialogBoxScale -= 1.0;
             } else {
                 gDialogBoxOpenTimer -= 10.0;
                 gDialogBoxScale -= 2.0;
@@ -1818,10 +1827,19 @@ void render_dialog_entries(void) {
                 }
 
                 gDialogResponse = gDialogLineNum;
+                				// do we have any special dialog types?
+				if (gDialogID == DIALOG_PAUSEMENU) {
+					OnPauseDialogEnd(gDialogLineNum - 1);
+				}
+				else if (gDialogID == DIALOG_STAGESELECT) {
+					OnStageSelectDialogEnd(gDialogLineNum - 1);
+				}
+				// clear the flag we use
+				gDialogUseCustomOptionSet = 0;
             }
 
-            gDialogBoxOpenTimer = gDialogBoxOpenTimer + 10.0f;
-            gDialogBoxScale = gDialogBoxScale + 2.0f;
+            gDialogBoxOpenTimer = gDialogBoxOpenTimer + 5.0f;
+            gDialogBoxScale = gDialogBoxScale + 1.0f;
 
             if (gDialogBoxOpenTimer == DEFAULT_DIALOG_BOX_ANGLE) {
                 gDialogBoxState = DIALOG_STATE_OPENING;
@@ -3120,4 +3138,10 @@ s16 render_menus_and_dialogs(void) {
         gDialogColorFadeTimer = (s16) gDialogColorFadeTimer + 0x1000;
     }
     return mode;
+}
+void dialog_set_options_avail(s8 opt) {
+	gDialogOptionsAvailable = opt;
+}
+void dialog_set_options_use(s8 flags) {
+	gDialogUseCustomOptionSet = flags;
 }

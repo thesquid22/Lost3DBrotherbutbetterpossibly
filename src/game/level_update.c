@@ -1,3 +1,4 @@
+#include "texscroll.h"
 #include <ultra64.h>
 
 #include "sm64.h"
@@ -1009,12 +1010,28 @@ s32 play_mode_normal(void) {
         } else if (sTransitionTimer != 0) {
             set_play_mode(PLAY_MODE_CHANGE_AREA);
         } else if (pressed_pause()) {
-            lower_background_noise(1);
+            /*lower_background_noise(1);
 #ifdef VERSION_SH
             cancel_rumble();
 #endif
             gCameraMovementFlags |= CAM_MOVE_PAUSE_SCREEN;
-            set_play_mode(PLAY_MODE_PAUSED);
+          set_play_mode(PLAY_MODE_PAUSED);*/
+
+			// are we in a hub world?
+			if (gCurrLevelNum == LEVEL_CASTLE //inside
+			 || gCurrLevelNum == LEVEL_CASTLE_GROUNDS
+			 || gCurrLevelNum == LEVEL_CASTLE_COURTYARD) {
+				level_set_transition(-1, NULL);
+				create_dialog_box_with_response(DIALOG_STAGESELECT);
+				dialog_set_options_avail(7);
+				dialog_set_options_use(1);
+			}
+			else // no, we aren't, let's just show the regular pause menu
+			{
+				level_set_transition(-1, NULL);
+				create_dialog_box_with_response(DIALOG_PAUSEMENU);
+				dialog_set_options_use(0);// just in case
+			}
         }
     }
 
@@ -1143,7 +1160,7 @@ s32 update_level(void) {
 
     switch (sCurrPlayMode) {
         case PLAY_MODE_NORMAL:
-            changeLevel = play_mode_normal();
+            changeLevel = play_mode_normal(); scroll_textures();
             break;
         case PLAY_MODE_PAUSED:
             changeLevel = play_mode_paused();
@@ -1332,6 +1349,6 @@ s32 lvl_set_current_level(UNUSED s16 arg0, s32 levelNum) {
  * Play the "thank you so much for to playing my game" sound.
  */
 s32 lvl_play_the_end_screen_sound(UNUSED s16 arg0, UNUSED s32 arg1) {
-    play_sound(SOUND_MENU_THANK_YOU_PLAYING_MY_GAME, gGlobalSoundSource);
+    play_sound(SOUND_MENU_COIN_ITS_A_ME_MARIO, gGlobalSoundSource);
     return 1;
 }
