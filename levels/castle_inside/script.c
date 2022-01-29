@@ -71,15 +71,15 @@ const LevelScript level_castle_inside_entry[] = {
 	    PAINTING_WARP_NODE(/*id*/ 0x00, /*destLevel*/ LEVEL_BOB, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         PAINTING_WARP_NODE(/*id*/ 0x01, /*destLevel*/ LEVEL_BOB, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         PAINTING_WARP_NODE(/*id*/ 0x02, /*destLevel*/ LEVEL_BOB, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-        PAINTING_WARP_NODE(/*id*/ 0x03, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-        PAINTING_WARP_NODE(/*id*/ 0x04, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-        PAINTING_WARP_NODE(/*id*/ 0x05, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x18, /*destLevel*/ LEVEL_WDW, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x19, /*destLevel*/ LEVEL_WDW, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x1A, /*destLevel*/ LEVEL_WDW, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         PAINTING_WARP_NODE(/*id*/ 0x06, /*destLevel*/ LEVEL_WF, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         PAINTING_WARP_NODE(/*id*/ 0x07, /*destLevel*/ LEVEL_WF, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         PAINTING_WARP_NODE(/*id*/ 0x08, /*destLevel*/ LEVEL_WF, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-		PAINTING_WARP_NODE(/*id*/ 0x09, /*destLevel*/ LEVEL_JRB, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-        PAINTING_WARP_NODE(/*id*/ 0x0A, /*destLevel*/ LEVEL_JRB, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-        PAINTING_WARP_NODE(/*id*/ 0x0B, /*destLevel*/ LEVEL_JRB, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x03, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x04, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x05, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         //PAUSE EXIT
 		WARP_NODE(/*id*/ 0x1F, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x1F, /*flags*/ WARP_NO_CHECKPOINT),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -1191,  -628,   0, /*angle*/ 0,  90, 0, /*behParam*/ 0x001F0000, /*beh*/ bhvInstantActiveWarp),
@@ -95,10 +95,12 @@ const LevelScript level_castle_inside_entry[] = {
         WARP_NODE(/*id*/ 0x27, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x27, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ 0x28, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x28, /*flags*/ WARP_NO_CHECKPOINT),
 
+
+        // Warp nodes need to be fixed
 		//BOB
         WARP_NODE(/*id*/ 0x32, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x32, /*flags*/ WARP_NO_CHECKPOINT),
-        OBJECT(/*model*/ MODEL_NONE, /*pos*/ 1826, -535,  -1018, /*angle*/ 0, 90, 0, /*behParam*/ 0x00320000, /*beh*/ bhvPaintingStarCollectWarp),
-        OBJECT(/*model*/ MODEL_NONE, /*pos*/  1826, -535,  -1018, /*angle*/ 0, 90, 0, /*behParam*/ 0x00640000, /*beh*/ bhvPaintingDeathWarp),
+        OBJECT(/*model*/ MODEL_NONE, /*pos*/ 1790,-527,  -1029, /*angle*/ 0, 90, 0, /*behParam*/ 0x00320000, /*beh*/ bhvPaintingStarCollectWarp),
+        OBJECT(/*model*/ MODEL_NONE, /*pos*/  1790,-527,  -1029, /*angle*/ 0, 90, 0, /*behParam*/ 0x00640000, /*beh*/ bhvPaintingDeathWarp),
 		WARP_NODE(/*id*/ 0x64, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x64, /*flags*/ WARP_NO_CHECKPOINT),
 
 		//WF
@@ -113,7 +115,13 @@ const LevelScript level_castle_inside_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/   -931, -278,  3595, /*angle*/ 0,   0, 0, /*behParam*/ 0x00670000, /*beh*/ bhvPaintingDeathWarp),
         WARP_NODE(/*id*/ 0x67, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x67, /*flags*/ WARP_NO_CHECKPOINT),
 
-	    //Death node eventually?
+		//WDW
+		OBJECT(/*model*/ MODEL_NONE, /*pos*/ -931, -278,  3595, /*angle*/ 0,   0, 0, /*behParam*/ 0x00330000, /*beh*/ bhvPaintingStarCollectWarp),
+		WARP_NODE(/*id*/ 0x37, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x33, /*flags*/ WARP_NO_CHECKPOINT),
+        OBJECT(/*model*/ MODEL_NONE, /*pos*/   -931, -278,  3595, /*angle*/ 0,   0, 0, /*behParam*/ 0x00670000, /*beh*/ bhvPaintingDeathWarp),
+        WARP_NODE(/*id*/ 0x68, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x67, /*flags*/ WARP_NO_CHECKPOINT),
+
+
         WARP_NODE(/*id*/ 0x04, /*destLevel*/ LEVEL_CASTLE,         /*destArea*/ 0x01, /*destNode*/ 0x03, /*flags*/ WARP_NO_CHECKPOINT), //to Area1 (DarkHallway)
         WARP_NODE(/*id*/ 0x05, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 0x01, /*destNode*/ 0x00, /*flags*/ WARP_NO_CHECKPOINT), //to Castle Grounds
         WARP_NODE(/*id*/ 0x06, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 0x01, /*destNode*/ 0x01, /*flags*/ WARP_NO_CHECKPOINT), //to Castle Grounds 
@@ -121,15 +129,11 @@ const LevelScript level_castle_inside_entry[] = {
 		WARP_NODE(/*id*/ 0x09, /*destLevel*/ LEVEL_CASTLE,         /*destArea*/ 0x03, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT), //to Area3 (Main 1st Floor)
         TERRAIN(castle_inside_area_2_collision),
         MACRO_OBJECTS(castle_inside_area_2_macro_objs),
-        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 3412, -806,   2, /*angle*/ 0,  90, 0, /*behParam*/ 0x00040000, /*beh*/ bhvDoorWarp), //Door to Area 1 (DarkHallway)
-        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 3958,   94,   -80, /*angle*/ 0, -90, 0, /*behParam*/ 0x00070000, /*beh*/ bhvDoorWarp), //Get Ready
-        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 3958, 94,   77, /*angle*/ 0,  90, 0, /*behParam*/ 0x00090000, /*beh*/ bhvDoorWarp), //Get Ready		
+        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 3412, -806,   2, /*angle*/ 0,  90, 0, /*behParam*/ 0x00040000, /*beh*/ bhvDoorWarp), //Door to Area 1 (DarkHallway)		
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ -933, -400,  1923, /*angle*/ 0,   0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to DDD room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ -933, -400, -1924, /*angle*/ 0,   0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to SS room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 198, -628,  1030, /*angle*/ 0, 90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to LLL room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/  196, -628, -1029, /*angle*/ 0, -90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to WF room
-        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/  197, -116,    77, /*angle*/ 0,  90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to bowserHall
-		OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 197, -116,    -80, /*angle*/ 0,  -90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to bowserHall
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 0, -628,   615, /*angle*/ 0, -36, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to main inside
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 0, -628,    -616, /*angle*/ 0,  36, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to main inside
         SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_INSIDE_CASTLE),

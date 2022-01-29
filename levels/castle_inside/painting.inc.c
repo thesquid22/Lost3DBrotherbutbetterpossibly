@@ -1359,8 +1359,8 @@ struct Painting bob_painting = {
     /* Texture Type */ PAINTING_IMAGE,
     /* Floor Status */ 0x00, 0x00, 0x00 /* which of the painting's nearby special floors Mario's on */,
     /* Ripple Status */ 0x00,
-    /* Rotation */     -90.0f,    -90.0f,
-    /* Position */ 1621.5f,   -1211.8f,   709.7f,
+    /* Rotation */     0.0f,    -90.0f,
+    /* Position */ 1621.5f,   -709.7f, -1211.8f,
     /*                         curr   passive     entry */
     /* Ripple Magnitude */     0.0f,    20.0f,    80.0f,
     /* Ripple Decay */         1.0f,  0.9608f,  0.9524f,
@@ -1386,8 +1386,8 @@ struct Painting ccm_painting = {
     /* Texture Type */ PAINTING_IMAGE,
     /* Floor Status */ 0x00, 0x00, 0x00 /* which of the painting's nearby special floors Mario's on */,
     /* Ripple Status */ 0x00,
-    /* Rotation */     -90.0f,     -180.0f,
-    /* Position */ -639.1f,  3411.0f, 543.9f,
+    /* Rotation */     0.0f,     -90.0f,
+    /* Position */ 1585.1f,  -763.0f, 792.9f,
     /*                         curr   passive     entry */
     /* Ripple Magnitude */     0.0f,    20.0f,    80.0f,
     /* Ripple Decay */         1.0f,  0.9608f,  0.9524f,
@@ -1403,7 +1403,7 @@ struct Painting ccm_painting = {
     /* Ripple Trigger */ RIPPLE_TRIGGER_PROXIMITY,
     /* Alpha */ 0xFF,
     /* Mario Below */  0x00, 0x00, 0x00, /* Whether or not Mario is below the painting */
-    /* Size */  592.0f,
+    /* Size */  474.0f,
 };
 
 // 0x07023710 - 0x07023788
@@ -1413,8 +1413,8 @@ struct Painting wf_painting = {
     /* Texture Type */ PAINTING_IMAGE,
     /* Floor Status */ 0x00, 0x00, 0x00 /* which of the painting's nearby special floors Mario's on */,
     /* Ripple Status */ 0x00,
-    /* Rotation */     -90.0f,     0.0f,
-    /* Position */   -1291.f,     -3692.0f, 246.0f,
+    /* Rotation */     0.0f,     0.0f,
+    /* Position */   -1291.f,  -246.0f,   -3692.0f,
     /*                         curr   passive     entry */
     /* Ripple Magnitude */     0.0f,    20.0f,    80.0f,
     /* Ripple Decay */         1.0f,  0.9608f,  0.9524f,
@@ -1575,8 +1575,8 @@ struct Painting wdw_painting = {
     /* Texture Type */ PAINTING_IMAGE,
     /* Floor Status */ 0x00, 0x00, 0x00 /* which of the painting's nearby special floors Mario's on */,
     /* Ripple Status */ 0x00,
-    /* Rotation */     0.0f,     0.0f,
-    /* Position */ -966.656f, 1305.6f, -143.36f,
+    /* Rotation */     0.0f,     180.0f,
+    /* Position */ -639.0f, -543.6f, 3411.36f,
     /*                         curr   passive     entry */
     /* Ripple Magnitude */     0.0f,    20.0f,    80.0f,
     /* Ripple Decay */         1.0f,  0.9608f,  0.9524f,
@@ -1592,7 +1592,7 @@ struct Painting wdw_painting = {
     /* Ripple Trigger */ RIPPLE_TRIGGER_PROXIMITY,
     /* Alpha */ 0xFF,
     /* Mario Below */  0x00, 0x00, 0x00, /* Whether or not Mario is below the painting */
-    /* Size */  614.0f,
+    /* Size */  588.0f,
 };
 
 // 0x07023A58 - 0x07023AD0
