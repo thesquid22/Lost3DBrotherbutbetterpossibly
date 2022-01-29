@@ -2103,8 +2103,8 @@ meet certain disaster."))
 
 DEFINE_DIALOG(DIALOG_PAUSEMENU, 1, 3, 100, 150, _("\
 ＰＡＵＳＥ　　　　\n\
-　Continue?\n\
-　Quit?"))
+  Continue?\n\
+  Quit?"))
 
 DEFINE_DIALOG(DIALOG_STAGESELECT, 1, 8, 95, 187, _("ＳＴＡＧＥ　ＳＥＬＥＣＴ\n"
 "  Continue?\n"
