@@ -3,7 +3,7 @@
 const GeoLayout castle_inside_area_1_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_ROTATION_NODE_WITH_DL(LAYER_OPAQUE, 90, 0, 0, castle_inside_dl_DarkHallway_mesh_layer_1),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, castle_inside_dl_DarkHallway_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
