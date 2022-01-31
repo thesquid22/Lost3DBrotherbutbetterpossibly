@@ -223,10 +223,6 @@ struct ParticleProperties sParticleTypes[] = {
  */
 void copy_mario_state_to_object(void) {
     s32 i = 0;
-    // L is real
-    if (gCurrentObject != gMarioObject) {
-        i += 1;
-    }
 
     gCurrentObject->oVelX = gMarioStates[i].vel[0];
     gCurrentObject->oVelY = gMarioStates[i].vel[1];
