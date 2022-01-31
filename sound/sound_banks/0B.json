@@ -48,12 +48,12 @@
     "instruments": {
         "inst0": {
             "release_rate": 19,
-            "normal_range_lo": 29,
+            "normal_range_lo": 36,
             "normal_range_hi": 63,
             "envelope": "envelope0",
-            "sound_lo": "3B_banjo_2",
+            "sound_lo": "2E_accordion",
             "sound": "3C_acoustic_guitar",
-            "sound_hi": "3D"
+            "sound_hi": "2F_sleigh_bells"
         },
         "inst1": {
             "release_rate": 208,
