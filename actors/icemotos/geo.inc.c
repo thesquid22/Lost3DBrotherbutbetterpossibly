@@ -59,7 +59,7 @@ Hierarchy RCP_HmsEnemyicemotos_basedata_A[] = {
                   hmsJoint(RM_SURF,NULL,0,0,0)  /* jnt37_1(16) */
                   hmsBegin()
                      hmsJoint(RM_SURF,RCP_icemotos_RhandB,0,0,0)  /* cube4(5) */
-					 hmsCProg(0, geo_update_held_mario_pos)
+					 hmsCProg(0, MotosProc1)
                   hmsEnd()
                hmsEnd()
                hmsJoint(RM_SURF,NULL,209,0,0)  /* eff31(12) */

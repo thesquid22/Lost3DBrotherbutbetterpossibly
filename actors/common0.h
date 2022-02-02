@@ -207,6 +207,8 @@ extern const Gfx purple_switch_seg8_dl_0800C6E0[];
 extern const Gfx purple_switch_seg8_dl_0800C718[];
 extern const Collision purple_switch_seg8_collision_0800C7A8[];
 
+
+#include "motos/header.h"
 //ice_motos
 extern const struct Animation *const motos_seg8_anims_0801DA4C[];
 
