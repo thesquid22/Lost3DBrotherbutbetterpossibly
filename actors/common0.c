@@ -82,5 +82,3 @@ UNUSED static const u64 binid_16 = 16;
 
 #include "koopa_shell/model.inc.c"
 UNUSED static const u64 binid_18 = 18;
-
-#include "icemotos/model.inc.c"
