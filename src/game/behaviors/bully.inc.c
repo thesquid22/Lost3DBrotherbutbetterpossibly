@@ -197,13 +197,13 @@ void bully_spawn_coin(void) {
 void bully_act_level_death(void) {
     if (obj_lava_death() == 1) {
         if (o->oBehParams2ndByte == BULLY_BP_SIZE_SMALL) {
-            if (o->oBullySubtype == BULLY_STYPE_MINION)
+            if (o->oBullySubtype == BULLY_STYPE_MINION || o->oBullySubtype ==BULLY_STYPE_CHILL)
                 o->parentObj->oBullyKBTimerAndMinionKOCounter++;
             bully_spawn_coin();
         } else {
             spawn_mist_particles();
 
-            if (o->oBullySubtype == BULLY_STYPE_CHILL)
+            if (o->oBullySubtype == BULLY_STYPE_CHILL && o->oBehParams2ndByte != BULLY_BP_SIZE_SMALL)
                 spawn_default_star(130.0f, 1600.0f, -4335.0f);
             else {
                 spawn_default_star(0, 950.0f, -6800.0f);

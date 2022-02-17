@@ -834,6 +834,7 @@ s8 UNUSED debug_sequence_tracker(s16 debugInputSequence[]) {
 #include "behaviors/castle_cannon_grate.inc.c"
 #include "behaviors/snowman.inc.c"
 #include "behaviors/boulder.inc.c"
+#include "behaviors/motosboss.inc.c"
 #include "behaviors/cap.inc.c"
 #include "behaviors/spawn_star.inc.c"
 #include "behaviors/red_coin.inc.c"

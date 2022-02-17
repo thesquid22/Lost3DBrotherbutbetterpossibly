@@ -365,6 +365,7 @@ extern const BehaviorScript bhvRespawner[];
 extern const BehaviorScript bhvSmallBully[];
 extern const BehaviorScript bhvBigBully[];
 extern const BehaviorScript bhvBigBullyWithMinions[];
+extern const BehaviorScript bhvMotosWithMinions[];
 extern const BehaviorScript bhvSmallChillBully[];
 extern const BehaviorScript bhvBigChillBully[];
 extern const BehaviorScript bhvMotosHand[];
