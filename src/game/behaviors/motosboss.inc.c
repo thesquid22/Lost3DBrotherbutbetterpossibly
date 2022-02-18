@@ -307,7 +307,7 @@ void motos_wait_talk(void)
             o->oSubAction++;
             seq_player_lower_volume(SEQ_PLAYER_LEVEL, 60, 40);
         }
-    } else if (cur_obj_update_dialog_with_cutscene(2, 1, CUTSCENE_DIALOG, DIALOG_017)) { cur_obj_become_tangible(); o->oAction = 1;
+    } else if (cur_obj_update_dialog_with_cutscene(2, 1, CUTSCENE_DIALOG, DIALOG_117)) { cur_obj_become_tangible(); o->oAction = 1;
   }
 }
 
