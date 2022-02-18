@@ -396,7 +396,7 @@ void motos_main(void)
 
 void s_motos(void)
 {
-    f32 sp2C = 25.0f;
+    f32 sp2C = 18.0f;
     f32 sp28 = 50.0f;
 
 	cur_obj_scale(2.0f);
