@@ -1,4 +1,5 @@
 extern const GeoLayout RCP_HmsEnemymotos_basedata_A[];
+extern const GeoLayout RCP_HmsEnemyicemotos_basedata_A[];
 extern const struct Animation *const motos_anime[];
 extern const Gfx RCP_motos_body[];
 extern const Gfx RCP_motos_arm[];

@@ -100,6 +100,10 @@ void bully_play_stomping_sound(void);
 void bully_step(void);
 void bully_spawn_coin(void);
 void bully_act_level_death(void);
+void s_motos_hand(void);
+void s_motos(void);
+void motos_act_level_death(void);
+void bhv_motos_anchor_mario_loop(void);
 void bhv_bully_loop(void);
 void big_bully_spawn_minion(s32 arg0, s32 arg1, s32 arg2, s16 arg3);
 void bhv_big_bully_with_minions_init(void);
@@ -162,5 +166,6 @@ void bhv_free_bowling_ball_loop(void); /* likely unused */
 void bhv_rr_cruiser_wing_init(void);
 void bhv_rr_cruiser_wing_loop(void);
 void spawn_default_star(f32 sp20, f32 sp24, f32 sp28);
+Gfx *MotosProc1(s32 run, UNUSED struct GraphNode *node, Mat4 mtx);
 
 #endif // OBJ_BEHAVIORS_H

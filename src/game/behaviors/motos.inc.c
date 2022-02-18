@@ -39,7 +39,7 @@ void bhv_motos_hand_loop(void) {
 
     common_anchor_mario_behavior(50.0f, 30.0f, 64); // Used common func instead of repeating code
 	
-	switch (o->parentObj->oChuckyaUnk88 ){
+	switch (o->parentObj->oMotosUnk88 ){
 	 	case	0:
 			break;
 		case	1:
@@ -48,17 +48,20 @@ void bhv_motos_hand_loop(void) {
 			break;
 		case	2:
                 gMarioObject->oInteractStatus |= (INT_STATUS_MARIO_UNK6 + INT_STATUS_MARIO_UNK2);
-			gMarioStates[0].forwardVel = 65.0f;
-			gMarioStates[0].vel[1] = 10.0f;
-			o->parentObj->oChuckyaUnk88 = 0;
+			gMarioStates[0].forwardVel = 40.0f;
+			gMarioStates[0].vel[1] = 20.0f;
+			o->oInteractStatus &= ~(INT_STATUS_GRABBED_MARIO);
+			o->parentObj->oMotosUnk88 = 0;
+			o->parentObj->oMotosUnk100 = 0;
 			break;
 		case 3:
             gMarioObject->oInteractStatus |=
                 (INT_STATUS_MARIO_UNK2 + INT_STATUS_MARIO_UNK6); // loads 2 interactions at once?
-            gMarioStates[0].forwardVel = 20.0f;
+            gMarioStates[0].forwardVel = 30.0f;
             gMarioStates[0].vel[1] = 10.0f;
 			o->oInteractStatus &= ~(INT_STATUS_GRABBED_MARIO);
-            o->parentObj->oChuckyaUnk88 = 0;
+            o->parentObj->oMotosUnk88 = 0;
+			o->parentObj->oMotosUnk100 = 0;
             break;
     }
 	
@@ -85,7 +88,7 @@ void bhv_motos_player_search(void) {
     
     if (o->oInteractStatus & INT_STATUS_GRABBED_MARIO) {
         o->oAction = MOTOS_ACT_PLAYER_CARRY;
-        o->oChuckyaUnk88 = 1;
+        o->oMotosUnk88 = 1;
     }
 }
 
@@ -108,8 +111,7 @@ void bhv_motos_player_pitch(void) {
 			cur_obj_play_sound_2(SOUND_OBJ_BULLY_METAL);
 }
     if (cur_obj_check_anim_frame(14)) {
-        o->oChuckyaUnk88 = 2;
-        o->oChuckyaUnk100 = 0;
+        o->oMotosUnk88 = 2;
     }
     
     if (cur_obj_check_if_near_animation_end()) {
@@ -125,12 +127,11 @@ void bhv_motos_carry_run(void) {
 		if ((sp1C & 6) == 0) {
 cur_obj_play_sound_2(SOUND_OBJ_POUNDING1_HIGHPRIO);
 }	
-    o->oChuckyaUnk100 += player_performed_grab_escape_action();
-    if (o->oChuckyaUnk100 > 10) {
+    o->oMotosUnk100 += player_performed_grab_escape_action();
+    if (o->oMotosUnk100 > 10) {
 	o->oAction = 6;
 	o->oInteractStatus &= ~(INT_STATUS_GRABBED_MARIO);
-	o->oChuckyaUnk88 = 3;
-	o->oChuckyaUnk100 = 0;
+	o->oMotosUnk88 = 3;
 }
     if (bhv_motos_do_throw_mario())
         o->oAction = MOTOS_ACT_PLAYER_PITCH;

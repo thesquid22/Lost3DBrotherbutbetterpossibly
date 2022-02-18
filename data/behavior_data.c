@@ -4133,6 +4133,24 @@ const BehaviorScript bhvBigBullyWithMinions[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvMotosWithMinions[] = { //Motos Replacement
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW  | OBJ_FLAG_1000 | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_HOLDABLE | OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_8000)),
+    LOAD_ANIMATIONS(oAnimations, motos_anime),
+        SET_INT(oInteractType, INTERACT_GRABBABLE),
+    SET_HITBOX(/*Radius*/ 100, /*Height*/ 100),
+    SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -50, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
+    SPAWN_OBJ(/*Model*/ MODEL_NONE, /*Behavior*/ bhvMotosHand),
+    SET_INT(oHealth, 3),
+    ANIMATE(0),
+        SET_INT(oIntangibleTimer, 0),
+    SET_HOME(),
+    CALL_NATIVE(motos_minions),
+    BEGIN_LOOP(),
+        CALL_NATIVE(s_motos),
+    END_LOOP(),
+};
+
 const BehaviorScript bhvSmallChillBully[] = {
     BEGIN(OBJ_LIST_GENACTOR),
     OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
