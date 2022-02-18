@@ -130,7 +130,7 @@ void motos_carry_run(void)
         o->oAction = 6;
         o->oInteractStatus &= ~(INT_STATUS_GRABBED_MARIO);
         o->oMotosUnk88 = 3;
-        o->oMotosUnk100 = 10;
+        o->oMotosUnk100 = 0;
     }
 
     cur_obj_init_animation_with_sound(2);
@@ -231,7 +231,7 @@ if (o->oForwardVel > 0.0) {
 		cur_obj_init_animation_with_sound(7);
 	if ( cur_obj_check_if_near_animation_end() )	{
 	cur_obj_become_tangible();
-	o->oAction = 1;
+	o->oAction = 12;
 		}
 	}
 }
@@ -294,6 +294,23 @@ void motos_minions(void) {
 
     o->oAction = 11;
 }
+
+void motos_wait_talk(void)
+{
+    o->oForwardVel = 0.0f;
+    o->oVelY = 0.0f;
+    cur_obj_init_animation_with_sound(8);
+    if (o->oSubAction == 0) {
+    cur_obj_become_intangible();
+    gSecondCameraFocus = o;
+            if (cur_obj_can_mario_activate_textbox_2(500.0f, 100.0f)) {
+            o->oSubAction++;
+            seq_player_lower_volume(SEQ_PLAYER_LEVEL, 60, 40);
+        }
+    } else if (cur_obj_update_dialog_with_cutscene(2, 1, CUTSCENE_DIALOG, DIALOG_017)) { cur_obj_become_tangible(); o->oAction = 1;
+  }
+}
+
 void motos_inactive(void) {
 	
 	            if (o->oBullyKBTimerAndMinionKOCounter == 3) {
@@ -324,49 +341,52 @@ void motos_deactivate(void) {  //Added so motos doesn't make walking sounds afte
 void motos_main(void)
 {
     cur_obj_update_floor_and_walls();
-//cur_obj_move_using_fvel_and_gravity();	
-	
-	switch (o->oAction) {
-	case 0:
-	motos_wait();
-	break;
-	case 1:
-	motos_player_search();
-	break;
-	case 2:
-	motos_carry_start();
-	break;
-	case 3:
-	motos_carry_run();
-	break;
-	case 4:
-	motos_pitch();
-	break;
-	case 5:
-	motos_fly();
-	break;
-	case 6:
-	motos_recover();
-	break;
-	case 7:
-	motos_death();
-	break;
-	case 8:
-	motos_recover2();
-	break;
-	case 9:
-	motos_returnhome();
-	break;
-	case 10:
-	motos_deactivate();
-	break;
-	case 11:
-	motos_inactive();
-	break;
-	}
-//	default: rmonpf(("Error objmode motos\n")); }
+//cur_obj_move_using_fvel_and_gravity();    
+    
+    switch (o->oAction) {
+    case 0:
+    motos_wait();
+    break;
+    case 1:
+    motos_player_search();
+    break;
+    case 2:
+    motos_carry_start();
+    break;
+    case 3:
+    motos_carry_run();
+    break;
+    case 4:
+    motos_pitch();
+    break;
+    case 5:
+    motos_fly();
+    break;
+    case 6:
+    motos_recover();
+    break;
+    case 7:
+    motos_death();
+    break;
+    case 8:
+    motos_recover2();
+    break;
+    case 9:
+    motos_returnhome();
+    break;
+    case 10:
+    motos_deactivate();
+    break;
+    case 11:
+    motos_inactive();
+    break;
+    case 12:
+    motos_wait_talk();
+    break;
+    }
+//    default: rmonpf(("Error objmode motos\n")); }
 
-	    cur_obj_move_standard(-78);							/*	monky moving 	*/
+        cur_obj_move_standard(-78);                            /*    monky moving     */
     if (o->oDistanceToMario < 5000.0f)
         cur_obj_enable_rendering();
     else
