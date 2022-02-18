@@ -336,6 +336,7 @@ void motos_death(void) {
 void motos_deactivate(void) {  //Added so motos doesn't make walking sounds after death
 		cur_obj_hide();
         cur_obj_become_intangible();
+        stop_background_music(SEQUENCE_ARGS(4, 0x16));
 }
 
 void motos_main(void)
@@ -395,8 +396,8 @@ void motos_main(void)
 
 void s_motos(void)
 {
-    f32 sp2C = 10.0f;
-    f32 sp28 = 25.0f;
+    f32 sp2C = 25.0f;
+    f32 sp28 = 50.0f;
 
 	cur_obj_scale(2.0f);
 
