@@ -946,7 +946,6 @@ s32 act_ground_pound(struct MarioState *m) {
             }
         }
 
-        //m->vel[1] = -50.0f;
         mario_set_forward_vel(m, 0.0f);
 
         set_mario_animation(m, m->actionArg == 0 ? MARIO_ANIM_START_GROUND_POUND
@@ -960,12 +959,9 @@ s32 act_ground_pound(struct MarioState *m) {
           if (m->actionTimer >= m->marioObj->header.gfx.animInfo.curAnim->loopEnd) {
             //play_sound(SOUND_MARIO_GROUND_POUND_WAH, m->marioObj->header.gfx.cameraToObject);
             m->actionState = 1;
-			m->vel[1] = -50.0f;
         }
     } else {
-        set_mario_animation(m, MARIO_ANIM_GROUND_POUND);
 
-        //stepResult = perform_air_step(m, 0);
         if (stepResult == AIR_STEP_LANDED) {
             if (should_get_stuck_in_ground(m)) {
 #ifdef VERSION_SH

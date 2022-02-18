@@ -74,7 +74,7 @@ void tuxies_mother_act_1(void) {
                 // o->prevObj->oUnknownUnk88 &= ~INT_SUBTYPE_DROP_IMMEDIATELY
                 // which has no effect as o->prevObj->oUnknownUnk88 is always 0
                 // or 1, which is not affected by the bitwise AND.
-                o->prevObj->OBJECT_FIELD_S32(o->oInteractionSubtype) &= ~INT_SUBTYPE_DROP_IMMEDIATELY;
+                o->prevObj->oInteractionSubtype &= ~INT_SUBTYPE_DROP_IMMEDIATELY;
                 obj_set_behavior(o->prevObj, bhvUnused20E0);
 #ifndef VERSION_JP
                 cur_obj_spawn_star_at_y_offset(3167.0f, -4300.0f, 5108.0f, 200.0f);
@@ -87,7 +87,7 @@ void tuxies_mother_act_1(void) {
         case 2:
             if (o->prevObj->oHeldState == HELD_FREE) {
                 //! Same bug as above
-                o->prevObj->OBJECT_FIELD_S32(o->oInteractionSubtype) &= ~INT_SUBTYPE_DROP_IMMEDIATELY;
+                o->prevObj->oInteractionSubtype &= ~INT_SUBTYPE_DROP_IMMEDIATELY;
                 obj_set_behavior(o->prevObj, bhvPenguinBaby);
                 o->oAction = 2;
             }
