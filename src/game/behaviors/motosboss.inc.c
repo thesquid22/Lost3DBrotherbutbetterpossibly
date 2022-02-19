@@ -399,7 +399,7 @@ void s_motos(void)
     f32 sp2C = 18.0f;
     f32 sp28 = 50.0f;
 
-	cur_obj_scale(2.0f);
+	cur_obj_scale(2.5f);
 
     o->oInteractionSubtype |= INT_SUBTYPE_GRABS_MARIO;
 
