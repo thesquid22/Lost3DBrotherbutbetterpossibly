@@ -284,9 +284,9 @@ void motos_spawn_minion(s32 arg0, s32 arg1, s32 arg2, s16 arg3) {
 }
 
 void motos_minions(void) {
-    motos_spawn_minion(200, 1372, -4500, 0);
-    motos_spawn_minion(650, 1372, -4300, 0);
-    motos_spawn_minion(450, 1372, -5000, 0);
+    motos_spawn_minion(-2799, 83, 14625, 0);
+    motos_spawn_minion(-4059, 83, 15134, 0);
+    motos_spawn_minion(-2838, 83, 15885, 0);
 
     o->header.gfx.node.flags |= GRAPH_RENDER_INVISIBLE;
 
@@ -330,7 +330,7 @@ void motos_death(void) {
         cur_obj_shake_screen(SHAKE_POS_SMALL);
 		cur_obj_hide();
         cur_obj_become_intangible();
-        spawn_default_star(300.0f, 1500.0f, -4800.0f);
+        spawn_default_star(-3462.0f, 231.0f, 15220.0f);
 		o->oAction = 10;
 }	
 void motos_deactivate(void) {  //Added so motos doesn't make walking sounds after death
