@@ -2459,7 +2459,7 @@ chan_setlayer 0, .layer_E49
 chan_end
 
 .layer_E49:
-layer_note1 38, 0x91, 127
+layer_note1 38, 0x30, 127
 layer_end
 
 .sound_mario_punch_wah:
