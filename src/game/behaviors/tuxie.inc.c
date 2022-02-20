@@ -101,7 +101,6 @@ void tuxies_mother_act_0(void) {
     struct Object *sp24;
     sp2C = 0;
     sp24 = cur_obj_find_nearest_object_with_behavior(bhvSmallPenguin, &sp28);
-    cur_obj_scale(4.0f);
     cur_obj_init_animation_with_sound(3);
     if (sp28 < 500.0f)
         sp2C = 1;
@@ -136,6 +135,7 @@ void (*sTuxiesMotherActions[])(void) = { tuxies_mother_act_0, tuxies_mother_act_
 void bhv_tuxies_mother_loop(void) {
     o->activeFlags |= ACTIVE_FLAG_UNK10;
     cur_obj_update_floor_and_walls();
+	cur_obj_scale(4.0f);
     cur_obj_call_action_function(sTuxiesMotherActions);
     cur_obj_move_standard(-78);
     play_penguin_walking_sound(PENGUIN_WALK_BIG);
