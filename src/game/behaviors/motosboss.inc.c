@@ -160,7 +160,7 @@ void motos_fly(void)
 {
 //   o->oForwardVel = 5.0f;
 	cur_obj_init_animation_and_extend_if_at_end(5);
-		if ((o->oPosY < 1000.0f)) {
+		if ((o->oPosY < -600.0f)) {
 			cur_obj_play_sound_2(SOUND_OBJ_BULLY_EXPLODE_2);
 							cur_obj_play_sound_2(SOUND_OBJ2_LARGE_BULLY_ATTACKED);     
 			o->oHealth--;
