@@ -50,3 +50,9 @@ build/*
 *.z64
 *.map
 .assets-local.txt
+
+# Ubuntu Junk
+*.Identifier
+*.lnk
+# Notepad++ Backup
+*.bak
