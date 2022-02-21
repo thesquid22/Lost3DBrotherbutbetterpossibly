@@ -174,7 +174,7 @@ void bully_step(void) {
     obj_check_floor_death(collisionFlags, sObjFloor);
 
     if (o->oBullySubtype & BULLY_STYPE_CHILL) {
-        if (o->oPosY < 1030.0f)
+        if (o->oPosY < -700.0f)
             o->oAction = BULLY_ACT_LAVA_DEATH;
     }
 }
