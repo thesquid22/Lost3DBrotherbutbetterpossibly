@@ -10,7 +10,13 @@ extern const GeoLayout intro_geo_mario_head_dizzy[];
 extern const GeoLayout intro_geo_000414[];
 
 // leveldata
-extern const Gfx intro_seg7_dl_0700B3A0[];
+extern Lights1 title_red_lights;
+extern Vtx title_SplashScreen_mesh_vtx_0[1974];
+extern Gfx title_SplashScreen_mesh_tri_0[];
+extern Gfx mat_title_red[];
+extern Gfx mat_revert_title_red[];
+extern Gfx title_SplashScreen_mesh[];
+
 extern const Gfx intro_seg7_dl_0700C6A0[];
 extern const f32 intro_seg7_table_0700C790[];
 extern const f32 intro_seg7_table_0700C880[];
