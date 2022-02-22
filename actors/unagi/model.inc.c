@@ -1,10 +1,10 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wmissing-braces"
 #define ShapeColor_animed_swim(r,g,b)   {{r/4 ,g/4 ,b/4 ,0 ,r/4 ,g/4 ,b/4 ,0 },{ r,g,b,0, r,g,b,0, 40, 40, 40, 0} }
-#define		STAGE7_UTUBO_FOG_R		 5
-#define		STAGE7_UTUBO_FOG_G		 80
-#define		STAGE7_UTUBO_FOG_B		 75
-#define		STAGE7_UTUBO_FOG_START	900
+#define        STAGE7_UTUBO_FOG_R         2
+#define        STAGE7_UTUBO_FOG_G         12
+#define        STAGE7_UTUBO_FOG_B         44
+#define        STAGE7_UTUBO_FOG_START    930
 /*-------------------------------------------------------------*/
 /*	light data                                                 */
 /*-------------------------------------------------------------*/
