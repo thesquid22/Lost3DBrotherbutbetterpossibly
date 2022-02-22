@@ -5794,7 +5794,6 @@ const BehaviorScript bhvUnagi[] = {
     ANIMATE(6),
     SET_HOME(),
     SCALE(/*Unused*/ 0, /*Field*/ 300),
-    SET_FLOAT(oDrawingDistance, 6000),
     CALL_NATIVE(bhv_unagi_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_unagi_loop),
