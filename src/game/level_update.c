@@ -351,6 +351,7 @@ void set_mario_initial_action(struct MarioState *m, u32 spawnType, u32 actionArg
             set_mario_action(m, ACT_FLYING, 2);
             break;
         case MARIO_SPAWN_SWIMMING:
+            load_level_init_text(0);
             set_mario_action(m, ACT_WATER_IDLE, 1);
             break;
         case MARIO_SPAWN_PAINTING_STAR_COLLECT:
