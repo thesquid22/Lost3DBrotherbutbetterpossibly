@@ -10,7 +10,7 @@ const GeoLayout castle_inside_area_2_geo[] = {
 		GEO_CLOSE_NODE(),
 							GEO_ASM(0, geo_painting_update),
             GEO_ASM(PAINTING_ID(2, 1), geo_painting_draw),
-            GEO_ASM(PAINTING_ID(8, 1), geo_painting_draw),
+            GEO_ASM(PAINTING_ID(3, 1), geo_painting_draw),
 			GEO_ASM(PAINTING_ID(0, 1), geo_painting_draw),
 			GEO_ASM(PAINTING_ID(1, 1), geo_painting_draw),
 	GEO_CLOSE_NODE(),

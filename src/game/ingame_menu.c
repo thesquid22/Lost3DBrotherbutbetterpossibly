@@ -119,7 +119,7 @@ int g_stagesToWarpTo[] = {
 	LEVEL_BOB,
 	LEVEL_WF,
 	LEVEL_CCM,
-	LEVEL_DDD,
+	LEVEL_JRB,
 	LEVEL_ENDING,
 	0,
 };

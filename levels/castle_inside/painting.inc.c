@@ -1440,8 +1440,8 @@ struct Painting jrb_painting = {
     /* Texture Type */ PAINTING_IMAGE,
     /* Floor Status */ 0x00, 0x00, 0x00 /* which of the painting's nearby special floors Mario's on */,
     /* Ripple Status */ 0x00,
-    /* Rotation */     -90.0f,   -90.0f,
-    /* Position */  1585.6f,  793.6f,  762.9f,
+    /* Rotation */     0.0f,   180.0f,
+    /* Position */ -639.0f, -543.6f, 3411.36f,
     /*                         curr   passive     entry */
     /* Ripple Magnitude */     0.0f,    20.0f,    80.0f,
     /* Ripple Decay */         1.0f,  0.9608f,  0.9524f,
@@ -1457,7 +1457,7 @@ struct Painting jrb_painting = {
     /* Ripple Trigger */ RIPPLE_TRIGGER_PROXIMITY,
     /* Alpha */ 0xFF,
     /* Mario Below */  0x00, 0x00, 0x00, /* Whether or not Mario is below the painting */
-    /* Size */  474.0f,
+    /* Size */  588.0f,
 };
 
 // 0x07023800 - 0x07023878
