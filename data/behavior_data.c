@@ -2558,7 +2558,6 @@ const BehaviorScript bhvSmallPenguin[] = {
     ANIMATE(0),
     SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -50, /*Drag strength*/ 0, /*Friction*/ 0, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
     SET_INT(oInteractType, INTERACT_GRABBABLE),
-    SET_INT(oInteractionSubtype, INT_SUBTYPE_HOLDABLE_NPC),
     SET_INT(oIntangibleTimer, 0),
     SET_HITBOX(/*Radius*/ 40, /*Height*/ 40),
     SET_HOME(),
