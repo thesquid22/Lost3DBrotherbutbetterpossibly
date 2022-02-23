@@ -117,9 +117,9 @@ const LevelScript level_castle_inside_entry[] = {
 
 		//JRB
 		OBJECT(/*model*/ MODEL_NONE, /*pos*/ -931, -278,  3595, /*angle*/ 0,   0, 0, /*behParam*/ 0x00330000, /*beh*/ bhvPaintingStarCollectWarp),
-		WARP_NODE(/*id*/ 0x37, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x33, /*flags*/ WARP_NO_CHECKPOINT),
+		WARP_NODE(/*id*/ 0x33, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x33, /*flags*/ WARP_NO_CHECKPOINT),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/   -931, -278,  3595, /*angle*/ 0,   0, 0, /*behParam*/ 0x00670000, /*beh*/ bhvPaintingDeathWarp),
-        WARP_NODE(/*id*/ 0x68, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x67, /*flags*/ WARP_NO_CHECKPOINT),
+        WARP_NODE(/*id*/ 0x67, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x67, /*flags*/ WARP_NO_CHECKPOINT),
 
 
         WARP_NODE(/*id*/ 0x04, /*destLevel*/ LEVEL_CASTLE,         /*destArea*/ 0x01, /*destNode*/ 0x03, /*flags*/ WARP_NO_CHECKPOINT), //to Area1 (DarkHallway)
