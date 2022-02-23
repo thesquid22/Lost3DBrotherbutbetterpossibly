@@ -30,6 +30,7 @@ void bhv_treasure_chest_top_loop(void) {
                     spawn_object_relative(0, 0, -80, 120, o, MODEL_BUBBLE, bhvWaterAirBubble);
                     play_sound(SOUND_GENERAL_CLAM_SHELL1, o->header.gfx.cameraToObject);
                 } else {
+                    spawn_object_relative(0, 0, -80, 120, o, MODEL_BUBBLE, bhvWaterAirBubble);
                     play_sound(SOUND_GENERAL_OPEN_CHEST, o->header.gfx.cameraToObject);
                 }
             }
@@ -145,10 +146,10 @@ void bhv_treasure_chest_ship_loop(void) {
 }
 
 void bhv_treasure_chest_jrb_init(void) {
-    spawn_treasure_chest(1, -1700, -2812, -1150, 0x7FFF);
-    spawn_treasure_chest(2, -1150, -2812, -1550, 0x7FFF);
-    spawn_treasure_chest(3, -2400, -2812, -1800, 0x7FFF);
-    spawn_treasure_chest(4, -1800, -2812, -2100, 0x7FFF);
+    spawn_treasure_chest(1,  -7689, -2626, 6832, 0x15310);
+    spawn_treasure_chest(2, -2314, -2982, 8945, 0x870F);
+    spawn_treasure_chest(3, -807, -2982, 5802, -0x3509);
+    spawn_treasure_chest(4, -7006, -2626, 7684, 0x5C19);
     o->oTreasureChestUnkF4 = 1;
     o->oTreasureChestUnkFC = 1;
 }
@@ -165,7 +166,7 @@ void bhv_treasure_chest_jrb_loop(void) {
         case 1:
             if (o->oTimer == 60) {
                 spawn_mist_particles();
-                spawn_default_star(-1800.0f, -2500.0f, -1700.0f);
+                spawn_default_star(-3967.0f, -761.0f, 3456.0f);
                 o->oAction = 2;
             }
             break;

@@ -206,6 +206,7 @@ extern const Gfx star_seg3_dl_0302B7B0[];
 extern const Gfx star_seg3_dl_0302B870[];
 extern const Gfx star_seg3_dl_0302B9C0[];
 extern const Gfx star_seg3_dl_0302BA18[];
+extern const Gfx RCP_star1[];
 
 // transparent_star
 extern const GeoLayout transparent_star_geo[];

@@ -61,7 +61,7 @@ void water_ring_check_collection(f32 avgScale, struct Object *ringManager) {
             if ((o->oWaterRingIndex == ringManager->oWaterRingMgrLastRingCollected + 1)
                 || (ringSpawner->oWaterRingSpawnerRingsCollected == 0)) {
                 ringSpawner->oWaterRingSpawnerRingsCollected++;
-                if (ringSpawner->oWaterRingSpawnerRingsCollected < 6) {
+                if (ringSpawner->oWaterRingSpawnerRingsCollected < 9) {
                     spawn_orange_number(ringSpawner->oWaterRingSpawnerRingsCollected, 0, -40, 0);
 #ifdef VERSION_JP
                     play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
@@ -180,7 +180,7 @@ void bhv_jet_stream_ring_spawner_loop(void) {
             if (o->oWaterRingSpawnerRingsCollected == 5) {
                 spawn_mist_particles();
 
-                spawn_default_star(3400.0f, -3200.0f, -500.0f);
+                spawn_default_star(90.0f, 1103.0f, -9620.0f);
 
                 o->oAction = JS_RING_SPAWNER_ACT_INACTIVE;
             }
@@ -214,7 +214,7 @@ void manta_water_ring_act_not_collected(void) {
     water_ring_set_scale(avgScale);
     set_object_visibility(o, 5000);
 
-    if (ringSpawner->oWaterRingSpawnerRingsCollected == 4
+    if (ringSpawner->oWaterRingSpawnerRingsCollected == 8
         && o->oWaterRingIndex == ringManager->oWaterRingMgrLastRingCollected + 1)
         o->oOpacity = sins(o->oTimer * 0x1000) * 200.0f + 50.0f;
 

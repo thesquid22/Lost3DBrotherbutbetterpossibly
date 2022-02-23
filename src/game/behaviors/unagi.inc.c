@@ -145,7 +145,7 @@ void bhv_unagi_loop(void) {
     if (o->oUnagiUnk1B2 == 0) {
         o->oUnagiUnk1AC = 99999.0f;
         if (o->oDistanceToMario < 3000.0f) {
-            for (val04 = -4; val04 < 4; val04++) {
+            for (val04 = -7; val04 < 7; val04++) {
                 spawn_object_relative(val04, 0, 0, 0, o, MODEL_NONE, bhvUnagiSubobject);
             }
             o->oUnagiUnk1B2 = 1;
@@ -190,7 +190,7 @@ void bhv_unagi_subobject_loop(void) {
         if (o->oBehParams2ndByte == -4) {
             if (o->parentObj->oAnimState != 0 && o->oDistanceToMario < 150.0f) {
                 o->oBehParams = o->parentObj->oBehParams;
-                spawn_default_star(6833.0f, -3654.0f, 2230.0f);
+                spawn_default_star(-897.0f, 300.0f, -7624.0f);
                 o->parentObj->oAnimState = 0;
             }
         } else {

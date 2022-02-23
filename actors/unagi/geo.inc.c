@@ -4,7 +4,7 @@ const GeoLayout unagi_geo[] = {
  hmsBegin()
  hmsScale(0.25f)
     hmsBegin()
-      hmsJoint(RM_SURF,NULL,0,0,0)			/* ,xx(), */
+      hmsJoint(RM_SURF,NULL,0,0,0)            /* ,xx(), */
       hmsBegin()
          hmsJoint(RM_SURF,RCP_animed_swim11,0,0,0)  /* ,nn_body2,(13) */
          hmsBegin()
@@ -13,20 +13,20 @@ const GeoLayout unagi_geo[] = {
                hmsJoint(RM_SURF,RCP_animed_swim1,494,0,0)  /* ,nn_body4,(1) */
                hmsBegin()
                   hmsJoint(RM_SURF,RCP_animed_swim0,475,0,0)  /* ,nn_body5,(0) */
-				    GEO_OPEN_NODE(),
-				       GEO_SWITCH_CASE(2, geo_switch_anim_state),
-                        GEO_OPEN_NODE(),
-                           GEO_NODE_START(),
-                           GEO_NODE_START(),
-                           GEO_OPEN_NODE(),
-                              GEO_SCALE(0x00, 16384),
-                              GEO_OPEN_NODE(),
-                                 GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 2000, 0, 0, 0, 0, 0, star_geo),
-                              GEO_CLOSE_NODE(),
-                           GEO_CLOSE_NODE(),
-                        GEO_CLOSE_NODE(),
-                     GEO_CLOSE_NODE(),
-                  GEO_CLOSE_NODE(),
+      hmsBegin()
+        hmsBboard(0,0,0)
+        hmsBegin()
+        hmsSelect(2, geo_switch_anim_state)
+            hmsBegin()
+                            hmsGroup()
+
+                            hmsGroup()
+                            hmsBegin()
+                GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 2000, 0, 0, 0, 0, 0, RCP_star1),//make texture transparent
+            hmsEnd()
+          hmsEnd()
+      hmsEnd()
+      hmsEnd()
                hmsEnd()
             hmsEnd()
             hmsJoint(RM_SURF,NULL,-254,0,0)  /* ,chn5,(11) */

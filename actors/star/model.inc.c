@@ -355,7 +355,7 @@ static Gfx gfx_star[] = {
 
 /*------------------------------------------------------------------------------*/
 
-Gfx RCP_star1[] = {
+const Gfx RCP_star1[] = {
 	gsDPPipeSync(),
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_coin1_txt),
 	gsSPBranchList(gfx_star)

@@ -6,14 +6,12 @@
  */
 
 static Trajectory sMantaRayTraj[] = { 
-    TRAJECTORY_POS(0, /*pos*/ -4500, -1380,   -40), 
-    TRAJECTORY_POS(1, /*pos*/ -4120, -2240,   740), 
-    TRAJECTORY_POS(2, /*pos*/ -3280, -3080,  1040), 
-    TRAJECTORY_POS(3, /*pos*/ -2240, -3320,   720), 
-    TRAJECTORY_POS(4, /*pos*/ -1840, -3140,  -280), 
-    TRAJECTORY_POS(5, /*pos*/ -2320, -2480, -1100), 
-    TRAJECTORY_POS(6, /*pos*/ -3220, -1600, -1360), 
-    TRAJECTORY_POS(7, /*pos*/ -4180, -1020, -1040), 
+    TRAJECTORY_POS(0, /*pos*/ -1557, 1, 5157), 
+    TRAJECTORY_POS(1, /*pos*/ -1714, 347,  7273), 
+    TRAJECTORY_POS(2, /*pos*/ -3919, 763,  8732), 
+    TRAJECTORY_POS(3, /*pos*/ -6429, 1040,  7002), 
+    TRAJECTORY_POS(4, /*pos*/ -6414, 1247,  4519), 
+    TRAJECTORY_POS(5, /*pos*/ -4125, 878, 4238),
     TRAJECTORY_END(),
 };
 
@@ -109,9 +107,9 @@ void bhv_manta_ray_loop(void) {
             manta_ray_act_spawn_ring();
 
             // Spawn a star after collecting 5 rings.
-            if (o->oWaterRingSpawnerRingsCollected == 5) {
+            if (o->oWaterRingSpawnerRingsCollected == 8) {
                 spawn_mist_particles();
-                spawn_default_star(-3180.0f, -3600.0f, 120.0f);
+                spawn_default_star(-3826.0f, 604.0f, 5995.0f);
                 o->oAction = MANTA_ACT_NO_RINGS;
             }
             break;
