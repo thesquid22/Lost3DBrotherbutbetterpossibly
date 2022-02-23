@@ -68,7 +68,7 @@ const LevelScript level_jrb_entry[] = {
 	    OBJECT(/*model*/ MODEL_NONE, /*pos*/ 1065, 12, -7767, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvJetStream),
 
 		OBJECT_WITH_ACTS(/*model*/ MODEL_NONE, /*pos*/ 1180, -928,  -7619, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvJetStreamRingSpawner, /*acts*/ ALL_ACTS), // 1 THE SUBMARINE'S TREASURE
-		OBJECT_WITH_ACTS(/*model*/ MODEL_UNAGI, /*pos*/ -1627, 1133, -11185, /*angle*/ 0, 0, 0, /*behParam*/ 0x01010000, /*beh*/ bhvUnagi, /*acts*/ ACT_1), // 2 SINISTER GUEST IN THE TRENCH
+		OBJECT_WITH_ACTS(/*model*/ MODEL_UNAGI, /*pos*/ -1627, 1133, -11185, /*angle*/ 0, 0, 0, /*behParam*/ 0x01010000, /*beh*/ bhvUnagi, /*acts*/ ACT_2), // 2 SINISTER GUEST IN THE TRENCH
         OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,  /*pos*/ -6869, -2626, 6611, /*angle*/ 0,   96, 0, /*behParam*/ 0x02000000, /*beh*/ bhvTreasureChestsJrb, /*acts*/ ACT_3), // 3 The mystery of the hole
 		OBJECT_WITH_ACTS(/*model*/ MODEL_MANTA_RAY, /*pos*/ -1557, 0, 5157, /*angle*/ 0, 0, 0, /*behParam*/ 0x04000000, /*beh*/ bhvMantaRay,       /*acts*/ ACT_5), // 5 The manta want to play
 
