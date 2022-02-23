@@ -52,7 +52,7 @@ ifeq      ($(VERSION),jp)
 else ifeq ($(VERSION),us)
   DEFINES   += VERSION_US=1
   OPT_FLAGS := -O2
-  GRUCODE   ?= f3dex2
+  GRUCODE   ?= f3dex
   VERSION_JP_US  ?= true
 else ifeq ($(VERSION),eu)
   DEFINES   += VERSION_EU=1
@@ -669,7 +669,28 @@ ifeq ($(COMPILER),ido)
   $(BUILD_DIR)/levels/%/leveldata.o: OPT_FLAGS := -O2
   $(BUILD_DIR)/actors/%.o:           OPT_FLAGS := -O3
   $(BUILD_DIR)/bin/%.o:              OPT_FLAGS := -O3
-  $(BUILD_DIR)/src/goddard/%.o:      OPT_FLAGS := -O2
+  $(BUILD_DIR)/asm/%.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/data/%.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/assets/%.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/sound/%.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/engine/%.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/menu/%.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/obj_behaviors_2.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/obj_behaviors.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/object_helpers.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/object_helpers.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/interaction.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_actions_cutscene.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_actions_moving.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_actions_airborne.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_actions_submerged.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_actions_stationary.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_actions_automatic.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_misc.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/mario_step.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/game/macro_special_objects.o: OPT_FLAGS := -O3
+  $(BUILD_DIR)/src/goddard/%.o:      OPT_FLAGS := -O3
   $(BUILD_DIR)/src/goddard/%.o:      MIPSISET := -mips1
   $(BUILD_DIR)/lib/src/%.o:          OPT_FLAGS := -O2
   $(BUILD_DIR)/lib/src/math/%.o:     OPT_FLAGS := -O3
@@ -716,8 +737,9 @@ ifeq ($(COMPILER),ido)
     # acpp, which needs -Wp,-+ to handle C++-style comments.
     # All other files than external.c should really use copt, but only a few have
     # been matched so far.
-    $(BUILD_DIR)/src/audio/effects.o:   OPT_FLAGS := -O2 -Wo,-loopunroll,0 -sopt,-inline=sequence_channel_process_sound,-scalaroptimize=1 -Wp,-+
-    $(BUILD_DIR)/src/audio/synthesis.o: OPT_FLAGS := -O2 -sopt,-scalaroptimize=1 -Wp,-+
+    $(BUILD_DIR)/src/audio/effects.o:   OPT_FLAGS := -O3 -Wo,-loopunroll,0 -sopt,-inline=sequence_channel_process_sound,-scalaroptimize=1 -Wp,-+
+    $(BUILD_DIR)/src/audio/synthesis.o: OPT_FLAGS := -O3 -sopt,-scalaroptimize=1 -Wp,-+
+	
   endif
 
 # Add a target for build/eu/src/audio/*.copt to make it easier to see debug
