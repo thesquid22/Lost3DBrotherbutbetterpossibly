@@ -14356,6 +14356,14 @@ Gfx mat_revert_castle_inside_dl_star_001_f3d[] = {
 };
 
 Gfx castle_inside_dl_DarkHallway_mesh_layer_1[] = {
+    gsDPPipeSync(),
+    gsDPSetCycleType(G_CYC_2CYCLE),
+    gsDPSetRenderMode(G_RM_FOG_SHADE_A, G_RM_AA_ZB_OPA_SURF2),
+    gsDPSetDepthSource(G_ZS_PIXEL),
+    gsDPSetFogColor(STAGE6_FOG_R, STAGE6_FOG_G, STAGE6_FOG_B, 255),
+    gsSPFogPosition(STAGE6_FOG_START, 950),
+    gsSPSetGeometryMode(G_FOG),
+    gsDPSetCombineMode(G_CC_MODULATERGB, G_CC_PASS2),
 	gsSPDisplayList(mat_castle_inside_dl_wall2_f3d),
 	gsSPDisplayList(castle_inside_dl_DarkHallway_mesh_layer_1_tri_0),
 	gsSPDisplayList(mat_castle_inside_dl_wall_f3d),
@@ -14382,7 +14390,10 @@ Gfx castle_inside_dl_DarkHallway_mesh_layer_1[] = {
 	gsSPDisplayList(castle_inside_dl_DarkHallway_mesh_layer_1_tri_9),
 	gsSPDisplayList(mat_castle_inside_dl_black2_f3d),
 	gsSPDisplayList(castle_inside_dl_DarkHallway_mesh_layer_1_tri_10),
-	gsSPEndDisplayList(),
+    gsDPSetCycleType(G_CYC_1CYCLE),
+    gsDPSetRenderMode(G_RM_AA_ZB_OPA_SURF, G_RM_NOOP2),
+    gsSPClearGeometryMode(G_FOG),
+    gsSPEndDisplayList(),
 };
 
 Gfx castle_inside_dl_Pre1st_Floor_mesh_layer_1[] = {

@@ -8,6 +8,11 @@
 #include "textures.h"
 #include "dialog_ids.h"
 
+#define        STAGE6_FOG_R        0
+#define        STAGE6_FOG_G        0
+#define        STAGE6_FOG_B        0
+#define        STAGE6_FOG_START    800
+
 #include "make_const_nonconst.h"
 #include "levels/castle_inside/texture.inc.c"
 #include "levels/castle_inside/painting.inc.c"
