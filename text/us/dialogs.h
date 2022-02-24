@@ -16,25 +16,27 @@
 #define GIVE_UP "give"
 #endif
 
-DEFINE_DIALOG(DIALOG_000, 1, 6, 30, 200, _("\
-Wow! You're smack in the\n\
-middle of the battlefield.\n\
-You'll find the Power\n\
-Stars that Bowser stole\n\
-inside the painting\n\
-worlds.\n\
-First, talk to the\n\
-Bob-omb Buddy. (Press [B]\n\
-to talk.) He'll certainly\n\
-help you out, and so will\n\
-his " COMRADES " in other\n\
-areas.\n\
-To read signs, stop, face\n\
-them and press [B]. Press [A]\n\
-or [B] to scroll ahead. You\n\
-can talk to some other\n\
-characters by facing them\n\
-and pressing [B]."))
+DEFINE_DIALOG(DIALOG_000, 1, 5, 95, 220, _("\
+    Welcome to the\n\
+     first level!\n\
+This fortress\n\
+is surely high...\n\
+\n\
+You'll find 6 stars in\n\
+each stage, there are\n\
+some dangerous enemies\n\
+here so listen up.\n\
+Try out the new moves:\n\
+SQUAT KICKING\n\
+press [Z] and then [B],\n\
+this fast kick will help\n\
+you take out some\n\
+enemies from the front.\n\
+TRIPLE JUMP TWIRL\n\
+perfect for high jumps\n\
+and smooth landing.\n\
+That's it for the demo\n\
+let the adventure begin!"))
 
 DEFINE_DIALOG(DIALOG_001, 1, 4, 95, 200, _("\
 Watch out! If you wander\n\
@@ -554,22 +556,30 @@ That's it for now. Press\n\
 [A] to let go. Okay,\n\
 bye byyyyyyeeee!"))
 
-DEFINE_DIALOG(DIALOG_046, 1, 4, 95, 187, _("\
-Welcome to Lost3DBrother,\n\
-created by XDelta &\n\
-Gronoti.\n\
-\n\
+DEFINE_DIALOG(DIALOG_046, 1, 4, 95, 220, _("\
+       Welcome to\n\
+ ----Lost3DBrother----\n\
+           by\n\
+         XDelta\n\
   It's Luigi Time Now!  \n\
 The poor brother is\n\
-trapped inside the beta\n\
-builds of the game,\n\
-you will explore familiar\n\
-levels and face enemies\n\
-already seen but strangely\n\
+trapped in some dark\n\
+dimension inside of\n\
+the main game's code\n\
+which are the beta\n\
+builds of the game and\n\
+you'll need to help him\n\
+escape this madness.\n\
+In your journey you'll\n\
+meet new enemies, explore\n\
+familiar levels and\n\
+face mobs already\n\
+seen but strangely\n\
 different...\n\
-To start off, enter the\n\
-door on your left and\n\
-enjoy the demo.\n\
+\n\
+To get started, enter\n\
+the second door on your\n\
+left and enjoy the demo.\n\
 \n\
 -----------------------\n\
 ★          The         ★\n\
@@ -2083,11 +2093,10 @@ DEFINE_DIALOG(DIALOG_PAUSEMENU, 1, 3, 100, 150, _("\
   Continue?\n\
   Quit?"))
 
-DEFINE_DIALOG(DIALOG_STAGESELECT, 1, 8, 95, 187, _("DEMO ＳＴＡＧＥ　ＳＥＬＥＣＴ\n"
+DEFINE_DIALOG(DIALOG_STAGESELECT, 1, 7, 95, 187, _("DEMO ＳＴＡＧＥ　ＳＥＬＥＣＴ\n"
 "  Continue?\n"
 "  1　SKY HIGH FORTRESS\n"
 "  2　ファイアーバブル\n"
-"  3　スノースライダー\n"
+"  3　SNOWY PLAIN\n"
 "  4　AQUATIC TRENCH\n"
-"　　　???\n"
 "  Title Screen"))

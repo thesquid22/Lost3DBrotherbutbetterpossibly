@@ -120,7 +120,6 @@ int g_stagesToWarpTo[] = {
 	LEVEL_WF,
 	LEVEL_CCM,
 	LEVEL_JRB,
-	LEVEL_ENDING,
 	0,
 };
 void OnPauseDialogEnd(int choice) {

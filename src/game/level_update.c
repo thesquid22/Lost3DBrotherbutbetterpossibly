@@ -1024,7 +1024,7 @@ s32 play_mode_normal(void) {
 			 || gCurrLevelNum == LEVEL_CASTLE_COURTYARD) {
 				level_set_transition(-1, NULL);
 				create_dialog_box_with_response(DIALOG_STAGESELECT);
-				dialog_set_options_avail(7);
+				dialog_set_options_avail(6);
 				dialog_set_options_use(1);
 			}
 			else // no, we aren't, let's just show the regular pause menu
