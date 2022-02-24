@@ -76,8 +76,8 @@ Gfx *geo_intro_super_mario_64_logo(s32 state, struct GraphNode *node, UNUSED voi
             scaleZ = 0.0f;
         } else {
             // disappeared
-            scaleX = 0.0f;
-            scaleY = 0.0f;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
             scaleZ = 0.0f;
         }
         guScale(scaleMat, scaleX, scaleY, scaleZ);
