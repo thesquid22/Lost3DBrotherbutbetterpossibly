@@ -316,7 +316,7 @@ void motos_inactive(void) {
 	            if (o->oBullyKBTimerAndMinionKOCounter == 3) {
                 play_puzzle_jingle();
                 if (o->oTimer >= 91) {
-									o->oPosY = 2037.0f;
+									o->oPosY = 520.0f;
 			o->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
                     o->oAction = 8;
             }
