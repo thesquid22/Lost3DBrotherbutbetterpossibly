@@ -267,15 +267,15 @@ s32 act_start_sleeping(struct MarioState *m) {
 
 #ifndef VERSION_JP
     if (m->actionState == 2 && animFrame == -1) {
-        play_sound(SOUND_MARIO_YAWNING, m->marioObj->header.gfx.cameraToObject);
+        //play_sound(SOUND_MARIO_EEUH, m->marioObj->header.gfx.cameraToObject);
     }
 
     if (m->actionState == 1 && animFrame == -1) {
-        play_sound(SOUND_MARIO_IMA_TIRED, m->marioObj->header.gfx.cameraToObject);
+        //play_sound(SOUND_MARIO_HOOHOO, m->marioObj->header.gfx.cameraToObject);
     }
 #else
     if (m->actionState == 2) {
-        play_sound_if_no_flag(m, SOUND_MARIO_YAWNING, MARIO_MARIO_SOUND_PLAYED);
+        //play_sound_if_no_flag(m, SOUND_MARIO_YAWNING, MARIO_MARIO_SOUND_PLAYED);
     }
 #endif
 
@@ -310,11 +310,11 @@ s32 act_sleeping(struct MarioState *m) {
             }
 
             if (animFrame == 2) {
-                play_sound(SOUND_MARIO_SNORING1, m->marioObj->header.gfx.cameraToObject);
+                //play_sound(SOUND_MARIO_SNORING1, m->marioObj->header.gfx.cameraToObject);
             }
 
             if (animFrame == 20) {
-                play_sound(SOUND_MARIO_SNORING2, m->marioObj->header.gfx.cameraToObject);
+                //play_sound(SOUND_MARIO_SNORING2, m->marioObj->header.gfx.cameraToObject);
             }
 
             if (is_anim_at_end(m)) {
