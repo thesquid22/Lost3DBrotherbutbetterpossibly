@@ -104,7 +104,7 @@ void motos_player_search(void)
 	cur_obj_rotate_yaw_toward(o->oAngleToMario, 0x300);
 	if ( o->oDistanceToMario > 2000 )	o->oAction = 0;
 	
-	if ((o->oPosY < o->oHomeY - 250) & (o->oTimer >= 20)) { //Should not happen unless Light Motos is performed, or the player lures motos of the platform in SL.
+	if ((o->oPosY < o->oHomeY - 700) & (o->oTimer >= 20)) { //Should not happen unless Light Motos is performed, or the player lures motos of the platform in SL.
 			o->oAction = 9;
 	}
 	if ( o->oInteractStatus & INT_STATUS_GRABBED_MARIO){
