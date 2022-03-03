@@ -45,6 +45,8 @@ void unbaba_act_swim(void) // Define Swimming Action for Blargg
 					o->oForwardVel = 4.0f;
 			}
 	}
+
+
 	if ( o->oDistanceToMario < 1500 ) {
 			o->oForwardVel = 2.0f;
 				if (gMarioState->action & ACT_FLAG_RIDING_SHELL){
@@ -85,6 +87,7 @@ void unbaba_act_attack(void) // Define Attacking Action for Blargg
 			cur_obj_rotate_yaw_toward(o->oAngleToMario, 0x80);
 		cur_obj_init_animation_with_accel_and_sound(1, 1.5f);
 	}
+	        cur_obj_play_sound_2(SOUND_OBJ_SUSHI_SHARK_WATER_SOUND);
 	cur_obj_init_animation_with_sound(UNBABA_ANIM_ATTACK);
 		if (animTimer < (20)){
 			o->oForwardVel = 2.0*(animTimer)+1;
