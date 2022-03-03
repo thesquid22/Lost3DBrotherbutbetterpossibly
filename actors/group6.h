@@ -8,6 +8,13 @@ extern const GeoLayout fwoosh_geo[];
 extern const Gfx fwoosh_seg5_dl_05016008[];
 extern const Gfx fwoosh_seg5_dl_05016040[];
 
+// blargg
+extern const GeoLayout blargg_geo[];
+extern const Gfx blargg_seg5_dl_050058D0[];
+extern const Gfx blargg_seg5_dl_05005A60[];
+extern const Gfx blargg_seg5_dl_05005D00[];
+extern const struct Animation *const blargg_seg5_anims_0500616C[];
+
 // monty_mole
 extern const GeoLayout monty_mole_geo[];
 extern const Gfx monty_mole_seg5_dl_05003208[];

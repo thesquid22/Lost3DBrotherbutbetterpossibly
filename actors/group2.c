@@ -11,8 +11,4 @@
 #include "bully/anims/table.inc.c"
 
 
-#include "blargg/model.inc.c"
-#include "blargg/anims/data.inc.c"
-#include "blargg/anims/table.inc.c"
-
 
