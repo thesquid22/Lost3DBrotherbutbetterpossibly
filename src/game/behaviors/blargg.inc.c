@@ -87,8 +87,9 @@ void unbaba_act_attack(void) // Define Attacking Action for Blargg
 			cur_obj_rotate_yaw_toward(o->oAngleToMario, 0x80);
 		cur_obj_init_animation_with_accel_and_sound(1, 1.5f);
 	}
-	        cur_obj_play_sound_2(SOUND_OBJ_SUSHI_SHARK_WATER_SOUND);
+
 	cur_obj_init_animation_with_sound(UNBABA_ANIM_ATTACK);
+
 		if (animTimer < (20)){
 			o->oForwardVel = 2.0*(animTimer)+1;
 			o->hurtboxRadius = 255;
@@ -113,7 +114,11 @@ void unbaba_act_attack(void) // Define Attacking Action for Blargg
 			o->oForwardVel = 60/(animTimer-18)+4;
 			}
 	}
-	if (cur_obj_check_if_near_animation_end()) {	
+	if (cur_obj_check_anim_frame(2)) {
+        play_sound(SOUND_OBJ_EEL, gGlobalSoundSource);
+    } 
+	if (cur_obj_check_if_near_animation_end()) {
+	 play_sound(SOUND_GENERAL_MOVING_WATER, gGlobalSoundSource);	
 	 o->oForwardVel = 2.5f;
 	 o->hurtboxRadius = 201;
 	 o->hurtboxHeight = 123;
