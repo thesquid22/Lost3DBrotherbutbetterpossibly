@@ -10,9 +10,44 @@ extern const Gfx fwoosh_seg5_dl_05016040[];
 
 // blargg
 extern const GeoLayout blargg_geo[];
-extern const Gfx blargg_seg5_dl_050058D0[];
-extern const Gfx blargg_seg5_dl_05005A60[];
-extern const Gfx blargg_seg5_dl_05005D00[];
+extern Lights1 blargg_Spines_lights;
+extern Lights1 blargg_BodyRED_lights;
+extern Lights1 blargg_f3d_material_001_lights;
+extern Lights1 blargg_Eye_lights;
+extern Lights1 blargg_Teeth_lights;
+extern Lights1 blargg_Jaw_lights;
+extern u8 blargg_nostrils_rgba16[];
+extern u8 blargg_eyes_frfr_ci8[];
+extern u8 blargg_eyes_frfr_ci8_pal_rgba16[];
+extern Vtx blargg_000_offset_001_mesh_layer_1_vtx_0[16];
+extern Gfx blargg_000_offset_001_mesh_layer_1_tri_0[];
+extern Vtx blargg_000_offset_001_mesh_layer_1_vtx_1[25];
+extern Gfx blargg_000_offset_001_mesh_layer_1_tri_1[];
+extern Vtx blargg_000_offset_002_mesh_layer_1_vtx_0[46];
+extern Gfx blargg_000_offset_002_mesh_layer_1_tri_0[];
+extern Vtx blargg_000_offset_002_mesh_layer_1_vtx_1[8];
+extern Gfx blargg_000_offset_002_mesh_layer_1_tri_1[];
+extern Vtx blargg_000_offset_002_mesh_layer_1_vtx_2[10];
+extern Gfx blargg_000_offset_002_mesh_layer_1_tri_2[];
+extern Vtx blargg_000_offset_002_mesh_layer_1_vtx_3[16];
+extern Gfx blargg_000_offset_002_mesh_layer_1_tri_3[];
+extern Vtx blargg_000_offset_004_mesh_layer_1_vtx_0[8];
+extern Gfx blargg_000_offset_004_mesh_layer_1_tri_0[];
+extern Vtx blargg_000_offset_004_mesh_layer_1_vtx_1[12];
+extern Gfx blargg_000_offset_004_mesh_layer_1_tri_1[];
+extern Vtx blargg_000_offset_004_mesh_layer_1_vtx_2[16];
+extern Gfx blargg_000_offset_004_mesh_layer_1_tri_2[];
+extern Gfx mat_blargg_Spines[];
+extern Gfx mat_blargg_BodyRED[];
+extern Gfx mat_blargg_f3d_material_001[];
+extern Gfx mat_blargg_Eye[];
+extern Gfx mat_revert_blargg_Eye[];
+extern Gfx mat_blargg_Teeth[];
+extern Gfx mat_blargg_Jaw[];
+extern Gfx blargg_000_offset_001_mesh_layer_1[];
+extern Gfx blargg_000_offset_002_mesh_layer_1[];
+extern Gfx blargg_000_offset_004_mesh_layer_1[];
+extern Gfx blargg_material_revert_render_settings[];
 extern const struct Animation *const blargg_seg5_anims_0500616C[];
 
 // monty_mole
