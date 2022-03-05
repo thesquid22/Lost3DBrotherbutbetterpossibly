@@ -342,7 +342,6 @@
 #define MODEL_HEAVE_HO                    0x59        // heave_ho_geo
 
 // group 2
-#define MODEL_BLARGG                      0x54        // blargg_geo
 #define MODEL_BULLY                       0x56        // bully_geo
 #define MODEL_BULLY_BOSS                  0x57        // bully_boss_geo
 #define MODEL_MOTOS                       0x58        // betah motos
@@ -372,6 +371,7 @@
 #define MODEL_MONTY_MOLE                  0x55        // monty_mole_geo
 #define MODEL_UKIKI                       0x56        // ukiki_geo
 #define MODEL_FWOOSH                      0x57        // fwoosh_geo
+#define MODEL_BLARGG                      0x58        // blargg_geo
 
 // group 7
 #define MODEL_SPINDRIFT                   0x54        // spindrift_geo
