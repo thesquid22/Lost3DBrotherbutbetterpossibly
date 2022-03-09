@@ -1,4 +1,5 @@
 
+
 #include <PR/ultratypes.h>
 
 #include "audio/external.h"
@@ -152,7 +153,7 @@ void bhv_act_selector_init(void) {
 		if (selectorModelIDs[i] == MODEL_TRANSPARENT_STAR) {
 			sStarSelectorModels[i] =
 				spawn_object_abs_with_rot(gCurrentObject, 0, selectorModelIDs[i], bhvActSelectorStarType,
-										  75 + sVisibleStars * -75 + i * 152, 270+80, -300, 0, 0, 0);
+										  75 + sVisibleStars * -75 + i * 152, 270, -300, 0, 0, 0);
 		} else {
 			sStarSelectorModels[i] =
 				spawn_object_abs_with_rot(gCurrentObject, 0, selectorModelIDs[i], bhvActSelectorStarType,
