@@ -13,7 +13,7 @@
     "0A_level_spooky": ["10", "21"],
     "0B_event_piranha_plant": ["14_piranha_music_box"],
     "0C_level_underground": ["15"],
-    "0D_hopper_land": ["11"],
+    "0D_course_select": ["11"],
     "0E_event_powerup": ["17"],
     "0F_event_metal_cap": ["18"],
     "10_event_koopa_message": ["12"],

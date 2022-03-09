@@ -20,7 +20,7 @@ enum SeqId {
     SEQ_LEVEL_SPOOKY,                 // 0x0A
     SEQ_EVENT_PIRANHA_PLANT,          // 0x0B
     SEQ_LEVEL_UNDERGROUND,            // 0x0C
-    SEQ_HOPPER_LAND,                  // 0x0D
+    SEQ_COURSE_SELECT,                // 0x0D
     SEQ_EVENT_POWERUP,                // 0x0E
     SEQ_EVENT_METAL_CAP,              // 0x0F
     SEQ_EVENT_KOOPA_MESSAGE,          // 0x10
