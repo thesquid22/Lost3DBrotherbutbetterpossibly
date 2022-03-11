@@ -3383,7 +3383,7 @@ void init_camera(struct Camera *c) {
         case AREA_SSL_EYEROK:
             vec3f_set(marioOffset, 0.f, 500.f, -100.f);
             break;
-        case AREA_CCM_SLIDE:
+        case AREA_CASTLE_LOBBY:
             marioOffset[2] = -300.f;
             break;
         case AREA_THI_WIGGLER:
