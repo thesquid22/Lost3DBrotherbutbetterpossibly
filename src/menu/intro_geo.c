@@ -50,9 +50,8 @@ Gfx *geo_intro_super_mario_64_logo(s32 state, struct GraphNode *node, UNUSED voi
     f32 scaleY;
     f32 scaleZ;
 
-    if (state != 1) {
-        sIntroFrameCounter = 0;
-    } else if (state == 1) {
+    //Intro Logo FIX
+    if (state == 1) {
         graphNode->flags = (graphNode->flags & 0xFF) | (LAYER_OPAQUE << 8);
         scaleMat = alloc_display_list(sizeof(*scaleMat));
         dl = alloc_display_list(4 * sizeof(*dl));
