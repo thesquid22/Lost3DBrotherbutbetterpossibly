@@ -38,26 +38,13 @@ and smooth landing.\n\
 That's it for the demo\n\
 let the adventure begin!"))
 
-DEFINE_DIALOG(DIALOG_001, 1, 4, 95, 200, _("\
-Watch out! If you wander\n\
-around here, you're liable\n\
-to be " PLASTERED " by a\n\
-water bomb!\n\
-Those enemy Bob-ombs love\n\
-to fight, and they're\n\
-always finding ways to\n\
-attack.\n\
-This meadow has become\n\
-a battlefield ever since\n\
-the Big Bob-omb got his\n\
-paws on the Power Star.\n\
-Can you recover the Star\n\
-for us? Cross the bridge\n\
-and go left up the path\n\
-to find the Big Bob-omb.\n\
-Please come back to see\n\
-me after you've retrieved\n\
-the Power Star!"))
+DEFINE_DIALOG(DIALOG_001, 1, 3, 95, 220, _("\
+A haunted laughing\n\
+lava cave?\n\
+That sounds like\n\
+recipe for disaster.\n\
+Remember to stay clear\n\
+of the firey dragons. "))
 
 DEFINE_DIALOG(DIALOG_002, 1, 3, 100, 187, _("\
 I... i don't know how i\n\
@@ -307,11 +294,8 @@ It takes the power of\n\
 door. You need [%] more\n\
 Stars."))
 
-DEFINE_DIALOG(DIALOG_028, 1, 4, 95, 200, _("\
-It takes the power of\n\
-50 Stars to open this\n\
-door. You need [%] more\n\
-Stars."))
+DEFINE_DIALOG(DIALOG_028, 1, 1, 95, 210, _("\
+This door won't budge..."))
 
 DEFINE_DIALOG(DIALOG_029, 1, 5, 95, 200, _("\
 To open the door that\n\
@@ -1098,12 +1082,13 @@ Now let me be! I have a\n\
 date! I cannot be late\n\
 for tea!"))
 
-DEFINE_DIALOG(DIALOG_085, 1, 5, 30, 200, _("\
-You don't stand a ghost\n\
-of a chance in this house.\n\
-If you walk out of here,\n\
-you deserve...\n\
-...a Ghoul Medal..."))
+DEFINE_DIALOG(DIALOG_085, 1, 3, 95, 220, _("\
+Now the Metal Cap\n\
+has a new power,\n\
+DASHING!\n\
+Press and Hold [B]\n\
+while running.\n\
+Blast 'em all!"))
 
 DEFINE_DIALOG(DIALOG_086, 1, 3, 30, 200, _("\
 Running around in circles\n\
@@ -2097,6 +2082,6 @@ DEFINE_DIALOG(DIALOG_STAGESELECT, 1, 7, 95, 187, _("DEMO ＳＴＡＧＥ　Ｓ�
 "  Continue?\n"
 "  1　SKY HIGH FORTRESS\n"
 "  2　ファイアーバブル\n"
-"  3　SNOWY PLAIN\n"
+"  3　FLAMING CATACOMBS\n"
 "  4　AQUATIC TRENCH\n"
 "  Title Screen"))

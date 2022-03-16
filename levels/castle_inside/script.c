@@ -77,9 +77,9 @@ const LevelScript level_castle_inside_entry[] = {
         PAINTING_WARP_NODE(/*id*/ 0x06, /*destLevel*/ LEVEL_WF, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         PAINTING_WARP_NODE(/*id*/ 0x07, /*destLevel*/ LEVEL_WF, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         PAINTING_WARP_NODE(/*id*/ 0x08, /*destLevel*/ LEVEL_WF, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-    PAINTING_WARP_NODE(/*id*/ 0x03, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-    PAINTING_WARP_NODE(/*id*/ 0x04, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
-    PAINTING_WARP_NODE(/*id*/ 0x05, /*destLevel*/ LEVEL_CCM, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x03, /*destLevel*/ LEVEL_HMC, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x04, /*destLevel*/ LEVEL_HMC, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+    PAINTING_WARP_NODE(/*id*/ 0x05, /*destLevel*/ LEVEL_HMC, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
         //PAUSE EXIT
 		WARP_NODE(/*id*/ 0x1F, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x1F, /*flags*/ WARP_NO_CHECKPOINT),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -1191,  -628,   0, /*angle*/ 0,  90, 0, /*behParam*/ 0x001F0000, /*beh*/ bhvInstantActiveWarp),
@@ -131,7 +131,7 @@ const LevelScript level_castle_inside_entry[] = {
         MACRO_OBJECTS(castle_inside_area_2_macro_objs),
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 3412, -806,   2, /*angle*/ 0,  90, 0, /*behParam*/ 0x00040000, /*beh*/ bhvDoorWarp), //Door to Area 1 (DarkHallway)		
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ -933, -400,  1923, /*angle*/ 0,   0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to DDD room
-        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ -933, -400, -1924, /*angle*/ 0,   0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to SS room
+        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ -933, -400, -1924, /*angle*/ 0,   0, 0, /*behParam*/  0x32000000, /*beh*/ bhvDoor), //to SS room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 198, -628,  1030, /*angle*/ 0, 90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to LLL room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/  196, -628, -1029, /*angle*/ 0, -90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to WF room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 0, -628,   615, /*angle*/ 0, -36, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to main inside

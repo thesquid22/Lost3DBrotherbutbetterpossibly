@@ -87,6 +87,7 @@ s32 sGameLoopTicked = 0;
 #define GRUNT 8
 #define WIGLR 9
 #define YOSHI 10
+#define DOOR 11
 #define _ 0xFF
 
 #ifdef VERSION_JP
@@ -99,7 +100,7 @@ u8 sDialogSpeaker[] = {
     //       0      1      2      3      4      5      6      7      8      9
     /* 0*/ _,     BOMB,  BOMB,  BOMB,  BOMB,  KOOPA, KOOPA, KOOPA, _,     KOOPA,
     /* 1*/ _,     _,     _,     _,     _,     _,     _,     KBOMB, _,     _,
-    /* 2*/ _,     BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1,
+    /* 2*/ _,     BOWS1, BOWS1, DOOR, DOOR, DOOR, DOOR, DOOR, DOOR,  DOOR,
     /* 3*/ _,     _,     _,     _,     _,     _,     _,     DIFF,  _,     _,
     /* 4*/ _,     KOOPA, _,     _,     _,     _,     _,     BOMB,  _,     _,
     /* 5*/ _,     _,     _,     _,     _,     TUXIE, TUXIE, TUXIE, TUXIE, TUXIE,
@@ -132,6 +133,7 @@ s32 sDialogSpeakerVoice[] = {
     SOUND_OBJ2_BOSS_DIALOG_GRUNT,
     SOUND_OBJ_WIGGLER_TALK,
     SOUND_GENERAL_YOSHI_TALK,
+    SOUND_GENERAL_CLOSE_WOOD_DOOR,
 #if defined(VERSION_JP) || defined(VERSION_US)
     NO_SOUND,
     NO_SOUND,
