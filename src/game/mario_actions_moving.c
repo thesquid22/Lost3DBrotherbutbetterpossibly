@@ -1723,7 +1723,7 @@ s32 act_hard_backward_ground_kb(struct MarioState *m) {
 
 #ifndef VERSION_JP
     if (animFrame == 54 && m->prevAction == ACT_SPECIAL_DEATH_EXIT) {
-        play_sound(SOUND_MARIO_MAMA_MIA, m->marioObj->header.gfx.cameraToObject);
+        //play_sound(SOUND_MARIO_HOOHOO, m->marioObj->header.gfx.cameraToObject);
     }
 #endif
 

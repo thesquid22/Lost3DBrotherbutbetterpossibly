@@ -36,6 +36,9 @@ const LevelScript level_castle_courtyard_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_COURTYARD_WOODEN_DOOR, wooden_door_geo), 
 
 	AREA(1, castle_courtyard_area_1),
+	    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -37, 765, -510, /*angle*/ 0,  0, 0, /*behParam*/ 0x00030000, /*beh*/ bhvLaunchDeathWarp),
+		WARP_NODE(/*id*/ 0x03, /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 0x01, /*destNode*/ 0x03, /*flags*/ WARP_NO_CHECKPOINT),
+	    WARP_NODE(/*id*/ 0xF1, /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 0x01, /*destNode*/ 0x03, /*flags*/ WARP_NO_CHECKPOINT),
 		WARP_NODE(/*id*/ 0x02, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x01, /*destNode*/ 0x01, /*flags*/ WARP_NO_CHECKPOINT),
         TERRAIN(castle_courtyard_area_1_collision),
 		MACRO_OBJECTS(castle_courtyard_area_1_macro_objs),
