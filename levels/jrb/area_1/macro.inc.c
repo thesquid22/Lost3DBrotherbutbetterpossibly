@@ -21,7 +21,7 @@ const MacroObject jrb_area_1_macro_objs[] = {
     MACRO_OBJECT(/*preset*/ macro_coin_ring_horizontal,        /*yaw*/  0, /*pos*/  -4077, 63, -8996),//line coins
     MACRO_OBJECT(/*preset*/ macro_coin_ring_horizontal,        /*yaw*/  0, /*pos*/  -867, 63, -7609),//line coins
 	  MACRO_OBJECT(/*preset*/ macro_koopa_shell_underwater,      /*yaw*/   0, /*pos*/  -5905, 79,  -9301),
-    MACRO_OBJECT(/*preset*/ macro_coin_ring_vertical,        /*yaw*/  0, /*pos*/  -3941, -916, 3456),//line coins      
+    MACRO_OBJECT(/*preset*/ macro_coin_ring_vertical,        /*yaw*/  0, /*pos*/  -3826, -916, 3456),//ring star coins      
     MACRO_OBJECT(/*preset*/ macro_box_star_6,                /*yaw*/   0, /*pos*/ -640, 2724,  4705), //3 WHAT'S IN THE FLYING ISLAND?
     MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -1067, -2982,  4832),
     MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -7324, -2626,  7292),

@@ -10,7 +10,7 @@ void bhv_bowser_bomb_loop(void) {
     if (o->oInteractStatus & INT_STATUS_HIT_MINE)
     {
         spawn_object(o, MODEL_BOWSER_FLAMES, bhvBowserBombExplosion);
-		if (o->oMoveFlags & OBJ_MOVE_MASK_IN_WATER) {
+		if (find_water_level(o->oPosX, o->oPosZ) > o->oPosY) {
         create_sound_spawner(SOUND_GENERAL_EXPLOSION6);
 		} else create_sound_spawner(SOUND_GENERAL_BOWSER_BOMB_EXPLOSION);
 		
