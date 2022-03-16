@@ -95,22 +95,20 @@ const LevelScript level_jrb_entry[] = {
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -4247,-1085, 1023, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3521,-301, 527, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -4452,-361, -594, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3612,-904, -648, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/ -3452,-784, 1410, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+		
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/ -4450,-810,1515, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/ -4358,-1326,1595, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/ -3855,-1331,1764, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/ -3959,-902,1697, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+	
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/ -3873,-153,1418, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4519,0,1062, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4152,153,1079, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3516,45,1182, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+	   
+	    
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4011,-567,1618, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3754,-413,925, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4261,-581,923, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3499,-336,1543, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3524,-780,408, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3956,-814,356, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4200,-290,1273, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4375,-609,1405, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3623,-994,833, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
@@ -118,22 +116,22 @@ const LevelScript level_jrb_entry[] = {
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3950,-779,980, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3989,-489, 425, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3573,-686, 688, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -4307,-625, 451, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+	
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3107,-652, 1440, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3808,-112, 845, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3883, 104, 1078, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3696, -804, 1483, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3628,-574, 325, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+	 
+
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3902,-1186, 1493, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -4766,-596, 1185, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4462,-1111,1437, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -4759,-1040, 1271, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-4123,-198,653, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3153,-214,1440, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3560, -220, 800, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3213,-1086,1222, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-	    OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/-3915,-1361,801, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
-		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3647,-1266, 1328, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
+
+	
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -4484,-241, 1223, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -3864,-967,332, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
 		OBJECT(/*model*/ MODEL_WATER_MINE, /*pos*/  -4388,-783,100, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBowserBomb),
