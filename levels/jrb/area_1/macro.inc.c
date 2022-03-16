@@ -23,6 +23,16 @@ const MacroObject jrb_area_1_macro_objs[] = {
 	  MACRO_OBJECT(/*preset*/ macro_koopa_shell_underwater,      /*yaw*/   0, /*pos*/  -5905, 79,  -9301),
     MACRO_OBJECT(/*preset*/ macro_coin_ring_vertical,        /*yaw*/  0, /*pos*/  -3941, -916, 3456),//line coins      
     MACRO_OBJECT(/*preset*/ macro_box_star_6,                /*yaw*/   0, /*pos*/ -640, 2724,  4705), //3 WHAT'S IN THE FLYING ISLAND?
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -1067, -2982,  4832),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -7324, -2626,  7292),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -7537, -2626,  6215),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -3202, -1453, 2614),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -4256, -1665, -1808),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -4055, 63, -9005),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -2751, -2982, 8331),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  1846, -807, -8514),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -5592, 63, -7465),
+    MACRO_OBJECT(/*preset*/ macro_seaweed_bundle,              /*yaw*/   0, /*pos*/  -3321, -640, -5667),
   MACRO_OBJECT_END(),
 };
 
