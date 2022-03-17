@@ -39,8 +39,8 @@
             "hang"
         ],
         "envelope6": [
-            [2, 32700],
-            [1, 32700],
+            [6, 32700],
+            [298, 32700],
             [32700, 29430],
             "hang"
         ]
@@ -48,12 +48,12 @@
     "instruments": {
         "inst0": {
             "release_rate": 208,
-            "envelope": "envelope0",
+            "envelope": "envelope2",
             "sound": "19_brass"
         },
         "inst1": {
             "release_rate": 208,
-            "envelope": "envelope1",
+            "envelope": "envelope6",
             "sound": "1A_slap_bass"
         },
         "inst2": {
