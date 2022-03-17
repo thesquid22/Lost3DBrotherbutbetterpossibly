@@ -15,10 +15,10 @@
 /*	Vertex data [common].														*/
 /********************************************************************************/
 static Vtx vtx_dotstar[] = {
-	{ -64,   0, 0,  0,	   0<<5, 31<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A 	},
-	{  64,	 0, 0,  0,	  31<<5, 31<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A	},
-	{  64, 128, 0,  0,	  31<<5,  0<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A	},
-	{ -64, 128, 0,  0,	   0<<5,  0<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A	},
+	{ -64, -64, 0,  0,	   0<<5, 31<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A 	},
+	{  64, -64, 0,  0,	  31<<5, 31<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A	},
+	{  64,  64, 0,  0,	  31<<5,  0<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A	},
+	{ -64,  64, 0,  0,	   0<<5,  0<<5,		STAR_POLYGON_R, STAR_POLYGON_G, STAR_POLYGON_B, STAR_POLYGON_A	},
 };
 
 /********************************************************************************/
