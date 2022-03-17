@@ -1,4 +1,4 @@
-
+#include "src/game/texscroll.h"
 
 #include <PR/ultratypes.h>
 
@@ -227,9 +227,9 @@ void print_course_number(void) {
     int_to_str(gCurrCourseNum, courseNum);
 
     if (gCurrCourseNum < 10) { // 1 digit number
-        print_hud_lut_string(HUD_LUT_GLOBAL, 152, 168, courseNum);
+        //print_hud_lut_string(HUD_LUT_GLOBAL, 152, 168, courseNum);
     } else { // 2 digit number
-        print_hud_lut_string(HUD_LUT_GLOBAL, 143, 168, courseNum);
+        //print_hud_lut_string(HUD_LUT_GLOBAL, 143, 168, courseNum);
     }
 
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
@@ -402,7 +402,7 @@ s32 lvl_update_obj_and_load_act_button_actions(UNUSED s32 arg, UNUSED s32 unused
         }
     }
 
-    area_update_objects();
+    area_update_objects(); scroll_textures();
     sActSelectorMenuTimer++;
     return sLoadedActNum;
 }
