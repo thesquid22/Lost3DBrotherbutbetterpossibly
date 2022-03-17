@@ -117,8 +117,7 @@ s32 gDialogResponse = 0;
 int g_stagesToWarpTo[] = {
 	0,
 	LEVEL_BOB,
-	LEVEL_WF,
-	LEVEL_CCM,
+	LEVEL_HMC,
 	LEVEL_JRB,
 	0,
 };
@@ -142,7 +141,7 @@ void OnStageSelectDialogEnd(int choice) {
 		if (choice != 0) // check for continue option
 		{
 			// we have clicked EXIT to title, reset game
-			save_file_reload(); fade_into_special_warp(-4, 0);
+			play_sound(SOUND_GENERAL_YOSHI_TALK, gGlobalSoundSource);
 		}
 		return;
 	}

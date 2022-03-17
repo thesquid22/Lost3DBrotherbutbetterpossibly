@@ -204,10 +204,13 @@ press [B], too. To throw\n\
 something you're holding,\n\
 press [B] again."))
 
-DEFINE_DIALOG(DIALOG_016, 1, 3, 30, 200, _("\
-Hop on the shiny shell and\n\
-ride wherever you want to\n\
-go! Shred those enemies!"))
+DEFINE_DIALOG(DIALOG_016, 1, 3, 95, 220, _("\
+What!?! what the heck \n\
+are you doing here?\n\
+How did you get in here???\n\
+I take no responsibility if\n\
+the game starts to freeze\n\
+due to cheaters!"))
 
 DEFINE_DIALOG(DIALOG_017, 1, 4, 30, 200, _("\
 I'm the Big Bob-omb, lord\n\
@@ -2078,10 +2081,9 @@ DEFINE_DIALOG(DIALOG_PAUSEMENU, 1, 3, 100, 150, _("\
   Continue?\n\
   Quit?"))
 
-DEFINE_DIALOG(DIALOG_STAGESELECT, 1, 7, 95, 187, _("DEMO ＳＴＡＧＥ　ＳＥＬＥＣＴ\n"
+DEFINE_DIALOG(DIALOG_STAGESELECT, 1, 6, 95, 187, _("DEMO ＳＴＡＧＥ　ＳＥＬＥＣＴ\n"
 "  Continue?\n"
 "  1　SKY HIGH FORTRESS\n"
-"  2　ファイアーバブル\n"
-"  3　FLAMING CATACOMBS\n"
-"  4　AQUATIC TRENCH\n"
-"  Title Screen"))
+"  2　FLAMING CATACOMBS\n"
+"  3　AQUATIC TRENCH\n"
+"  Have Fun!"))
