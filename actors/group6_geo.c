@@ -8,6 +8,8 @@
 #include "group6.h"
 
 #include "monty_mole/geo.inc.c"
-#include "ukiki/geo.inc.c"
 #include "fwoosh/geo.inc.c"
 #include "blargg/geo.inc.c"
+#include "boo/geo.inc.c"
+
+#include "ukiki/geo.inc.c"

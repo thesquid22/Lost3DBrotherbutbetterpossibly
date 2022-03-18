@@ -369,9 +369,10 @@
 // group 6
 #define MODEL_DL_MONTY_MOLE_HOLE          0x54        // monty_mole_hole_seg5_dl_05000840
 #define MODEL_MONTY_MOLE                  0x55        // monty_mole_geo
-#define MODEL_UKIKI                       0x56        // ukiki_geo
+#define MODEL_BOO                         0x56        // boo_geo
 #define MODEL_FWOOSH                      0x57        // fwoosh_geo
 #define MODEL_BLARGG                      0x58        // blargg_geo
+#define MODEL_UKIKI                       0x59        // ukiki_geo
 
 // group 7
 #define MODEL_SPINDRIFT                   0x54        // spindrift_geo
@@ -385,7 +386,6 @@
 #define MODEL_CAP_SWITCH_BASE             0x56        // cap_switch_base_seg5_dl_05003120
 
 // group 9
-#define MODEL_BOO                         0x54        // boo_geo
 #define MODEL_BETA_BOO_KEY                   0x55        // small_key_geo
 #define MODEL_HAUNTED_CHAIR               0x56        // haunted_chair_geo
 #define MODEL_MAD_PIANO                   0x57        // mad_piano_geo

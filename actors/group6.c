@@ -16,7 +16,6 @@
 
 #include "smoke/model.inc.c"
 
-
 #include "ukiki/model.inc.c"
 #include "ukiki/anims/data.inc.c"
 #include "ukiki/anims/table.inc.c"
@@ -27,4 +26,6 @@
 #include "blargg/model.inc.c"
 #include "blargg/anims/data.inc.c"
 #include "blargg/anims/table.inc.c"
+
+#include "boo/model.inc.c"
 

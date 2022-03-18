@@ -26,9 +26,9 @@
 #include "mad_piano/anims/data.inc.c"
 #include "mad_piano/anims/table.inc.c"
 
-
-#include "boo/model.inc.c"
-
+#include "ukiki/model.inc.c"
+#include "ukiki/anims/data.inc.c"
+#include "ukiki/anims/table.inc.c"
 
 #include "haunted_cage/model.inc.c"
 
