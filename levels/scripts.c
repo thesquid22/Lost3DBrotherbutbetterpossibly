@@ -254,7 +254,7 @@ const LevelScript script_func_global_6[] = {
 const LevelScript script_func_global_7[] = {
     LOAD_MODEL_FROM_DL( MODEL_DL_MONTY_MOLE_HOLE,      monty_mole_hole_seg5_dl_05000840, LAYER_TRANSPARENT_DECAL),
     LOAD_MODEL_FROM_GEO(MODEL_MONTY_MOLE,              monty_mole_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_UKIKI,                   ukiki_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_BOO,                     boo_geo),
     LOAD_MODEL_FROM_GEO(MODEL_FWOOSH,                  fwoosh_geo),
     RETURN(),
 };
@@ -275,7 +275,7 @@ const LevelScript script_func_global_9[] = {
 };
 
 const LevelScript script_func_global_10[] = {
-    LOAD_MODEL_FROM_GEO(MODEL_BOO,                     boo_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_UKIKI,                   ukiki_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BETA_BOO_KEY,               small_key_geo),
     LOAD_MODEL_FROM_GEO(MODEL_HAUNTED_CHAIR,           haunted_chair_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MAD_PIANO,               mad_piano_geo),

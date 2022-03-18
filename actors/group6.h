@@ -138,4 +138,12 @@ extern const Gfx ukiki_seg5_dl_0500D078[];
 extern const Gfx ukiki_seg5_dl_0500D108[];
 extern const struct Animation *const ukiki_seg5_anims_05015784[];
 
+
+// boo
+extern const GeoLayout boo_geo[];
+extern const Gfx boo_seg5_dl_0500BEE0[];
+extern const Gfx boo_seg5_dl_0500BF48[];
+extern const Gfx boo_seg5_dl_0500BFA0[];
+extern const Gfx boo_seg5_dl_0500C1B0[];
+
 #endif
