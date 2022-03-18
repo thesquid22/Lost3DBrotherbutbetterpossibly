@@ -162,11 +162,7 @@ s32 intro_default(void) {
          D_U_801A7C34 = 1;
  #endif
     }
-    else if ((gPlayer1Controller->buttonPressed & L_TRIG) && (gPlayer1Controller->buttonPressed & R_TRIG)) {
-        gDebugLevelSelect = TRUE; // enable debug ls and play sound
-        //play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
-        //play_sound(SOUND_MARIO_HERE_WE_GO, gGlobalSoundSource);
-    } if (gDebugLevelSelect) print_text_centered(160, 20, "DEMO");
+
     return run_press_start_demo_timer(sp1C);
 }
 
