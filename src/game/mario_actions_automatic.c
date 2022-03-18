@@ -607,6 +607,35 @@ s32 act_hang_moving(struct MarioState *m) {
     return FALSE;
 }
 
+s32 act_swinging(struct MarioState *m) {
+    s32 drag;
+
+    m->actionTimer++
+
+    if (m->input & INPUT_NONZERO_ANALOG && m->actionTimer >= 12) {
+        set_mario_anim_with_accel(m, ACT_SWINGING, 12);
+        if (m->input & INPUT_B_PRESSED) {
+            set_mario_anim(m, ACT_DIVE, 0);
+        }
+    }
+
+    if (!(m->input & INPUT_A_DOWN)) {
+        return set_mario_action(m, ACT_FREEFALL, 0);
+    }
+
+    if (m->input & INPUT_Z_PRESSED) {
+        return set_mario_action(m, ACT_GROUND_POUND, 0);
+    }
+
+    if (m->ceil->type != SURFACE_SWINGABLE_ROOF) {
+        return set_mario_action(m, ACT_FREEFALL, 0);
+    }
+
+    update_hang_stationary(m);
+
+    return FALSE;
+}
+
 s32 let_go_of_ledge(struct MarioState *m) {
     f32 floorHeight;
     struct Surface *floor;
@@ -1000,6 +1029,7 @@ s32 mario_execute_automatic_action(struct MarioState *m) {
         case ACT_IN_CANNON:              cancel = act_in_cannon(m);              break;
         case ACT_TORNADO_TWIRLING:       cancel = act_tornado_twirling(m);       break;
         case ACT_CLIMBING_WALL:          cancel = act_climbing_wall(m);    		 break;
+        case ACT_SWINGING:               cancel = act_swinging(m);               break;
     }
     /* clang-format on */
 
