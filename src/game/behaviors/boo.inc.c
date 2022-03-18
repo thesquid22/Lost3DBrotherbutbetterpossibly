@@ -428,7 +428,7 @@ static void kaidanteresa_init(void)
 		s_copy_initpos();
 		s_shape_disp();
 		oba_alphawork = 255;
-		oba_scale	  = 2;
+		oba_scale	  = 3;
 		s_set_scale(2);
 		s_hitON();	
 		if ( obake_appearcheck() ) obj_mode = mode_kaidanteresa_main;
@@ -469,11 +469,11 @@ static void kaidanteresa_hitaway(void)
 {
 	if ( obake_hitaway() ){
 		obj_mode = mode_kaidanteresa_demo;
-		s_set_world(execstp,973,0,717);
-		s_set_angle(execstp,0,0,0);
-		s_makeobj_chain(0,0,0,   0,execstp,MODEL_BBH_STAIRCASE_STEP,bhvBooBossSpawnedBridge);
-		s_makeobj_chain(1,0,0,-200,execstp,MODEL_BBH_STAIRCASE_STEP,bhvBooBossSpawnedBridge);
-		s_makeobj_chain(2,0,0, 200,execstp,MODEL_BBH_STAIRCASE_STEP,bhvBooBossSpawnedBridge);
+		s_set_world(execstp,-2912,  -2316,  -11872);
+		//s_set_angle(execstp,0,0,0);
+		//s_makeobj_chain(0,0,0,   0,execstp,MODEL_BBH_STAIRCASE_STEP,bhvBooBossSpawnedBridge);
+		//s_makeobj_chain(1,0,0,-200,execstp,MODEL_BBH_STAIRCASE_STEP,bhvBooBossSpawnedBridge);
+		//s_makeobj_chain(2,0,0, 200,execstp,MODEL_BBH_STAIRCASE_STEP,bhvBooBossSpawnedBridge);
 	}
 
 }
@@ -484,8 +484,8 @@ static void kaidanteresa_hitaway(void)
 static void kaidanteresa_demo(void)
 {
 
-	if ( obj_timer == 100 ){
-	 	spawn_object_abs_with_rot(execstp,0,MODEL_STAR,bhvStar,972,819+200,292,0,0,0);
+	if ( obj_timer == 50 ){
+		spawn_default_star(-2912,  -2316,  -11872);
 		s_remove_obj(execstp);
 	}
 
