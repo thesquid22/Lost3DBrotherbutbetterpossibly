@@ -61,7 +61,7 @@ const LevelScript level_hmc_entry[] = {
 		OBJECT(/*model*/ MODEL_NONE,              /*pos*/  8702, 1008, 2668, /*angle*/ 0,  202, 0, /*behParam*/ 0x000A0000, /*beh*/ bhvSpinAirborneWarp), //SpinAirborne Spawn
 
         //Enemies
-		OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,/*pos*/  -2912,  -2316,  -11872, /*angle*/ 0, 0, 0, /*behParam*/ 0x03000000, /*beh*/ bhvBalconyBigBoo,        /*acts*/ ACT_5), // 5 The dead come back to life!
+		OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,/*pos*/  -2912,  -2316,  -11872, /*angle*/ 0, 0, 0, /*behParam*/ 0x03000000, /*beh*/ bhvBalconyBigBoo,        /*acts*/ ACT_4), // 5 The dead come back to life!
 		OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,/*pos*/ -3904,  -2084, -853, /*angle*/ 0, 171, 0,   /*behParam*/ 0x00000000, /*beh*/ bhvBoo,/*acts*/ ACT_4 | ACT_5),
 		OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,/*pos*/ 867,   -1784,  1814, /*angle*/ 0, 91, 0,   /*behParam*/ 0x00000000, /*beh*/ bhvBoo,/*acts*/ ALL_ACTS),
 	    OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,/*pos*/ -4680,   -2176,  -394, /*angle*/ 0, 161, 0,   /*behParam*/ 0x00000000, /*beh*/ bhvBoo,/*acts*/ ACT_1 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
