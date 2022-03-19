@@ -610,12 +610,12 @@ s32 act_hang_moving(struct MarioState *m) {
 s32 act_swinging(struct MarioState *m) {
     s32 drag;
 
-    m->actionTimer++
+    m->actionTimer++;
 
     if (m->input & INPUT_NONZERO_ANALOG && m->actionTimer >= 12) {
         set_mario_anim_with_accel(m, ACT_SWINGING, 12);
         if (m->input & INPUT_B_PRESSED) {
-            set_mario_anim(m, ACT_DIVE, 0);
+            set_mario_animation(m, ACT_DIVE);
         }
     }
 
