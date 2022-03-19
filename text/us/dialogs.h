@@ -196,7 +196,7 @@ Do you want to Save?\n\
 
 DEFINE_DIALOG(DIALOG_015, 1, 4, 95, 210, _("\
 You should use the\n\
-Lakitu <-> Mario Camera\n\
+up close view Camera\n\
 mode by pressing [R]."))
 
 DEFINE_DIALOG(DIALOG_016, 1, 3, 95, 220, _("\
