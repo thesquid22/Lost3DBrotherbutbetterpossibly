@@ -207,31 +207,29 @@ I take no responsibility if\n\
 the game starts to freeze\n\
 due to cheaters!"))
 
-DEFINE_DIALOG(DIALOG_017, 1, 4, 30, 200, _("\
-I'm the Big Bob-omb, lord\n\
-of all blasting matter,\n\
-king of ka-booms the\n\
-world over!\n\
-How dare you scale my\n\
-mountain? By what right\n\
-do you set foot on my\n\
-imperial mountaintop?\n\
-You may have eluded my\n\
-guards, but you'll never\n\
-escape my grasp...\n\
+DEFINE_DIALOG(DIALOG_017, 1, 4, 95, 220, _("\
+Look who's here, Luigi!\n\
+I remember you being\n\
+taller actually...\n\
 \n\
-...and you'll never take\n\
-away my Power Star. I\n\
-hereby challenge you,\n\
-Mario!\n\
-If you want the Star I\n\
-hold, you must prove\n\
-yourself in battle.\n\
+Anyway, the Devs decided\n\
+against us, but in this\n\
+new adventure you will\n\
+have the chance to see\n\
+my old pals in all their\n\
+rawness! Some of them\n\
+are very gorgeous\n\
+but others...\n\
+Give you goose-polygons!\n\
+It's such a shame they\n\
+deleted us...\n\
 \n\
-Can you pick me up from\n\
-the back and hurl me to\n\
-this royal turf? I think\n\
-that you cannot!"))
+But thanks to some\n\
+guys we are back more\n\
+threatening than ever!\n\
+\n\
+Enough with chit-chats\n\
+and LET'S FIGHT!!!"))
 
 DEFINE_DIALOG(DIALOG_018, 1, 4, 30, 200, _("\
 I'm sleeping because...\n\
