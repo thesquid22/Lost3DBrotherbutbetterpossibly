@@ -438,11 +438,12 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
             drop_and_set_mario_action(m, ACT_LEDGE_GRAB, 0);
             break;
 
-        case AIR_STEP_GRABBED_CEILING:
-            if (m->ceil = SURFACE_SWINGABLE_ROOF) {
-                return set_mario_action(m, ACT_START_HANGING, 0);
+        case AIR_STEP_GRABBED_CEILING:               
+            if (m->ceil->type == SURFACE_SWINGABLE_ROOF) {
+                set_mario_action(m, ACT_START_SWINGING, 0);
+            } else {
+                set_mario_action(m, ACT_START_HANGING, 0);
             }
-            set_mario_action(m, ACT_START_HANGING, 0);
             break;
 
         case AIR_STEP_HIT_LAVA_WALL:
