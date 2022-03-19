@@ -394,6 +394,7 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
 					return set_mario_action(m, ACT_CLIMBING_WALL, 0);
 				}
 			}
+
             if (m->forwardVel > 16.0f) {
 #ifdef VERSION_SH
                 queue_rumble_data(5, 40);
@@ -438,6 +439,9 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
             break;
 
         case AIR_STEP_GRABBED_CEILING:
+            if (m->ceil == SURFACE_SWINGABLE_ROOF) {
+                return set_mario_action(m, ACT_START_HANGING, 0);
+            }
             set_mario_action(m, ACT_START_HANGING, 0);
             break;
 
