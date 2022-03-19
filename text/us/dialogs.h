@@ -257,7 +257,7 @@ and don't come back!\n\
 Gwa ha ha!"))
 
 DEFINE_DIALOG(DIALOG_022, 1, 2, 95, 210, _("\
-The door was closed\n\
+the door has been locked\n\
 from the outside..."))
 
 DEFINE_DIALOG(DIALOG_023, 1, 3, 95, 200, _("\

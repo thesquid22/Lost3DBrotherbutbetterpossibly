@@ -98,7 +98,7 @@ s32 sGameLoopTicked = 0;
 
 u8 sDialogSpeaker[] = {
     //       0      1      2      3      4      5      6      7      8      9
-    /* 0*/ _,     BOMB,  BOMB,  BOMB,  BOMB,  KOOPA, KOOPA, KOOPA, _,     KOOPA,
+    /* 0*/ _,     TUXIE,  BOMB,  BOMB,  BOMB,  KOOPA, KOOPA, KOOPA, _,     KOOPA,
     /* 1*/ _,     _,     _,     _,     _,     _,     _,     KBOMB, _,     _,
     /* 2*/ _,     UKIKI, UKIKI, DOOR, DOOR, DOOR, DOOR, DOOR, DOOR,  DOOR,
     /* 3*/ _,     _,     _,     _,     _,     _,     _,     DIFF,  _,     _,
@@ -123,7 +123,7 @@ STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT,
 
 s32 sDialogSpeakerVoice[] = {
     SOUND_OBJ_BOO_LAUGH_LONG,
-    SOUND_OBJ_BIG_PENGUIN_YELL,
+    SOUND_OBJ_BOBOMB_BUDDY_TALK,
     SOUND_OBJ_BOWSER_INTRO_LAUGH,
     SOUND_OBJ_KOOPA_TALK,
     SOUND_OBJ_KING_BOBOMB_TALK,
