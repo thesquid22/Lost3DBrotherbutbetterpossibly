@@ -1027,7 +1027,7 @@ u32 interact_door(struct MarioState *m, UNUSED u32 interactType, struct Object *
 
             return set_mario_action(m, enterDoorAction, actionArg);
         } else if (!sDisplayingDoorText) {
-            u32 text = DIALOG_022 << 16;
+            u32 text = DIALOG_022 << 30;
 
             switch (requiredNumStars) {
                 case 1:

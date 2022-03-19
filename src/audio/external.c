@@ -100,7 +100,7 @@ u8 sDialogSpeaker[] = {
     //       0      1      2      3      4      5      6      7      8      9
     /* 0*/ _,     BOMB,  BOMB,  BOMB,  BOMB,  KOOPA, KOOPA, KOOPA, _,     KOOPA,
     /* 1*/ _,     _,     _,     _,     _,     _,     _,     KBOMB, _,     _,
-    /* 2*/ _,     BOWS1, BOWS1, DOOR, DOOR, DOOR, DOOR, DOOR, DOOR,  DOOR,
+    /* 2*/ _,     UKIKI, UKIKI, DOOR, DOOR, DOOR, DOOR, DOOR, DOOR,  DOOR,
     /* 3*/ _,     _,     _,     _,     _,     _,     _,     DIFF,  _,     _,
     /* 4*/ _,     KOOPA, _,     _,     _,     _,     _,     BOMB,  _,     _,
     /* 5*/ _,     _,     _,     _,     _,     TUXIE, TUXIE, TUXIE, TUXIE, TUXIE,
@@ -122,7 +122,7 @@ STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT,
               "change this array if you are adding dialogs");
 
 s32 sDialogSpeakerVoice[] = {
-    SOUND_OBJ_UKIKI_CHATTER_LONG,
+    SOUND_OBJ_BOO_LAUGH_LONG,
     SOUND_OBJ_BIG_PENGUIN_YELL,
     SOUND_OBJ_BOWSER_INTRO_LAUGH,
     SOUND_OBJ_KOOPA_TALK,

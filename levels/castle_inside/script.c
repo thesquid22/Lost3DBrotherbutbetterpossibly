@@ -58,7 +58,7 @@ const LevelScript level_castle_inside_entry[] = {
         //Death node eventually?
         WARP_NODE(/*id*/ 0x01, /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 0x01, /*destNode*/ 0x02, /*flags*/ WARP_NO_CHECKPOINT), //To Courtyard Spawn
         WARP_NODE(/*id*/ 0x03, /*destLevel*/ LEVEL_CASTLE,           /*destArea*/ 0x02, /*destNode*/ 0x04, /*flags*/ WARP_NO_CHECKPOINT), //To Area1 (Pre1stFloor)
-        OBJECT(/*model*/ MODEL_COURTYARD_WOODEN_DOOR, /*pos*/  -3, -414,  4489, /*angle*/ 0, 0, 0, /*behParam*/ 0x00010000, /*beh*/ bhvDoorWarp), //Door to Courtyard Spawn
+        OBJECT(/*model*/ MODEL_COURTYARD_WOODEN_DOOR, /*pos*/  -3, -414,  4489, /*angle*/ 0, 0, 0, /*behParam*/ 0x01010000, /*beh*/ bhvDoorWarp), //Door to Courtyard Spawn
 		OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR,    /*pos*/  -2, -412, -4044, /*angle*/ 0, 0, 0, /*behParam*/ 0x00030000, /*beh*/ bhvDoorWarp), //Door to Area1 (Pre1stFloor)
         TERRAIN(castle_inside_area_1_collision),
         MACRO_OBJECTS(castle_inside_area_1_macro_objs),
@@ -129,7 +129,7 @@ const LevelScript level_castle_inside_entry[] = {
 		WARP_NODE(/*id*/ 0x09, /*destLevel*/ LEVEL_CASTLE,         /*destArea*/ 0x03, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT), //to Area3 (Main 1st Floor)
         TERRAIN(castle_inside_area_2_collision),
         MACRO_OBJECTS(castle_inside_area_2_macro_objs),
-        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 3412, -806,   2, /*angle*/ 0,  90, 0, /*behParam*/ 0x00040000, /*beh*/ bhvDoorWarp), //Door to Area 1 (DarkHallway)		
+        OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 3412, -806,   2, /*angle*/ 0,  90, 0, /*behParam*/ 0x02040000, /*beh*/ bhvDoorWarp), //Door to Area 1 (DarkHallway)		
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ -933, -400,  1923, /*angle*/ 0,   0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to DDD room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ -933, -400, -1924, /*angle*/ 0,   0, 0, /*behParam*/  0x32000000, /*beh*/ bhvDoor), //to SS room
         OBJECT(/*model*/ MODEL_CASTLE_CASTLE_DOOR, /*pos*/ 198, -628,  1030, /*angle*/ 0, 90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvDoor), //to LLL room
