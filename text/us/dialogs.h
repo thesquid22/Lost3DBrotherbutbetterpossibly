@@ -46,7 +46,7 @@ recipe for disaster.\n\
 Remember to stay clear\n\
 of the firey dragons. "))
 
-DEFINE_DIALOG(DIALOG_002, 1, 3, 100, 187, _("\
+DEFINE_DIALOG(DIALOG_002, 1, 3, 95, 220, _("\
 I... i don't know how i\n\
 ended up on this floating\n\
 island.\n\
