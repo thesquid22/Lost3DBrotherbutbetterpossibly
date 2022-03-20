@@ -2753,8 +2753,8 @@ s16 render_pause_courses_and_castle(void) {
 #define TXT_HISCORE_Y 48
 #define TXT_CONGRATS_X 70
 #else
-#define TXT_HISCORE_X 109
-#define TXT_HISCORE_Y 36
+#define TXT_HISCORE_X 10
+#define TXT_HISCORE_Y 100
 #define TXT_CONGRATS_X 70
 #endif
 
@@ -2844,7 +2844,7 @@ void print_hud_course_complete_coins(s16 x, s16 y) {
 
 void play_star_fanfare_and_flash_hud(s32 arg, u8 starNum) {
     if (gHudDisplay.coins == gCourseCompleteCoins && (gCurrCourseStarFlags & starNum) == 0 && gHudFlash == 0) {
-        play_star_fanfare();
+        //play_star_fanfare();
         gHudFlash = arg;
     }
 }
@@ -2913,7 +2913,7 @@ void render_course_complete_lvl_info_and_hud_str(void) {
 #endif
 
     if (gLastCompletedCourseNum <= COURSE_STAGES_MAX) {
-        print_hud_course_complete_coins(118, 103);
+        print_hud_course_complete_coins(30, 123);
         play_star_fanfare_and_flash_hud(1, 1 << (gLastCompletedStarNum - 1));
 
         if (gLastCompletedStarNum == 7) {
@@ -2925,51 +2925,37 @@ void render_course_complete_lvl_info_and_hud_str(void) {
         gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
         int_to_str(gLastCompletedCourseNum, strCourseNum);
         gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, gDialogTextAlpha);
-        print_generic_string(65, 165, textCourse);
-        print_generic_string(CRS_NUM_X2, 165, strCourseNum);
-        gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-        print_generic_string(63, 167, textCourse);
-        print_generic_string(CRS_NUM_X3, 167, strCourseNum);
+        //print_generic_string(65, 165, textCourse);
+        //print_generic_string(CRS_NUM_X2, 165, strCourseNum);
+        //gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
+        //print_generic_string(63, 167, textCourse);
+        //print_generic_string(CRS_NUM_X3, 167, strCourseNum);
         gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
     } else if (gLastCompletedCourseNum == COURSE_BITDW || gLastCompletedCourseNum == COURSE_BITFS) {
         name = segmented_to_virtual(courseNameTbl[gLastCompletedCourseNum - 1]);
         gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
         gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, gDialogTextAlpha);
-#ifdef VERSION_EU
-        centerX = get_str_x_pos_from_center(153, name, 12.0f);
-#endif
-        print_generic_string(TXT_NAME_X1, 130, name);
-#ifndef VERSION_EU
-        print_generic_string(TXT_CLEAR_X1, 130, textClear);
-#endif
-        gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-        print_generic_string(TXT_NAME_X2, 132, name);
-#ifndef VERSION_EU
-        print_generic_string(TXT_CLEAR_X2, 132, textClear);
-#endif
-        gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
-        print_hud_course_complete_string(HUD_PRINT_CONGRATULATIONS);
-        print_hud_course_complete_coins(118, 111);
+        print_hud_course_complete_coins(30, 123);
         play_star_fanfare_and_flash_hud(2, 0); //! 2 isn't defined, originally for key hud?
         return;
     } else {
         name = segmented_to_virtual(actNameTbl[COURSE_STAGES_MAX * 6]);
-        print_hud_course_complete_coins(118, 103);
+        print_hud_course_complete_coins(30, 123);
         play_star_fanfare_and_flash_hud(1, 1 << (gLastCompletedStarNum - 1));
     }
 
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-    print_hud_lut_string(HUD_LUT_GLOBAL, 55, 77, textSymStar);
+    //print_hud_lut_string(HUD_LUT_GLOBAL, 55, 77, textSymStar);
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, gDialogTextAlpha);
-    print_generic_string(76, 145, name);
+    //print_generic_string(76, 145, name);
 #if defined(VERSION_JP) || defined(VERSION_SH)
     print_generic_string(220, 145, textCatch);
 #endif
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-    print_generic_string(74, 147, name);
+    //print_generic_string(74, 147, name);
 #if defined(VERSION_JP) || defined(VERSION_SH)
     print_generic_string(218, 147, textCatch);
 #endif
@@ -3055,7 +3041,7 @@ s16 render_course_complete_screen(void) {
     switch (gDialogBoxState) {
         case DIALOG_STATE_OPENING:
             render_course_complete_lvl_info_and_hud_str();
-            if (gCourseDoneMenuTimer > 100 && gCourseCompleteCoinsEqual == 1) {
+            if (gCourseDoneMenuTimer > 60 && gCourseCompleteCoinsEqual == 1) {
                 gDialogBoxState = DIALOG_STATE_VERTICAL;
                 level_set_transition(-1, NULL);
                 gDialogTextAlpha = 0;
@@ -3064,12 +3050,9 @@ s16 render_course_complete_screen(void) {
             break;
         case DIALOG_STATE_VERTICAL:
             shade_screen();
-            render_course_complete_lvl_info_and_hud_str();
-#ifdef VERSION_EU
-            render_save_confirmation(86, &gDialogLineNum, 20);
-#else
-            render_save_confirmation(100, 86, &gDialogLineNum, 20);
-#endif
+            print_hud_course_complete_coins(30, 123);
+            render_save_confirmation(100, 200, &gDialogLineNum, 20);
+
 
             if (gCourseDoneMenuTimer > 110
                 && (gPlayer3Controller->buttonPressed & A_BUTTON
@@ -3079,7 +3062,7 @@ s16 render_course_complete_screen(void) {
 #endif
                 )) {
                 level_set_transition(0, NULL);
-                play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+                play_sound(SOUND_MENU_UNK0C, gGlobalSoundSource);
                 gDialogBoxState = DIALOG_STATE_OPENING;
                 gMenuMode = -1;
                 num = gDialogLineNum;

@@ -249,12 +249,25 @@ s32 get_star_collection_dialog(struct MarioState *m) {
 // save menu handler
 void handle_save_menu(struct MarioState *m) {
     s32 dialogID;
-    // wait for the menu to show up
-    if (is_anim_past_end(m)) {
-        disable_time_stop();
-        m->faceAngle[1] += 0x8000;
-        set_mario_action(m, ACT_IDLE, 0);
-    }
+    if (is_anim_past_end(m) && gSaveOptSelectIndex != 0) {
+        // save and continue / save and quit
+        if (gSaveOptSelectIndex == SAVE_OPT_SAVE_AND_CONTINUE || gSaveOptSelectIndex == SAVE_OPT_SAVE_AND_QUIT) {
+            save_file_do_save(gCurrSaveFileNum - 1);
+
+            if (gSaveOptSelectIndex == SAVE_OPT_SAVE_AND_QUIT) {
+                fade_into_special_warp(-2, 0); // reset game
+            }
+        }
+
+        // not quitting
+        if (gSaveOptSelectIndex != SAVE_OPT_SAVE_AND_QUIT) {
+            disable_time_stop();
+            m->faceAngle[1] += 0x8000;
+            set_mario_action(m, ACT_IDLE, 0);
+            
+        }
+    }   
+    
 }
 
 /**
@@ -1116,8 +1129,8 @@ s32 act_exit_land_save_dialog(struct MarioState *m) {
                     enable_time_stop();
                 }
 
-                //set_menu_mode(RENDER_COURSE_DONE_SCREEN);
-                //gSaveOptSelectIndex = 0;
+                set_menu_mode(RENDER_COURSE_DONE_SCREEN);
+                gSaveOptSelectIndex = 0;
 
                 m->actionState = 3; // star exit with cap
                 if (!(m->flags & MARIO_CAP_ON_HEAD)) {
