@@ -209,27 +209,27 @@ due to cheaters!"))
 
 DEFINE_DIALOG(DIALOG_017, 1, 4, 95, 220, _("\
 Look who's here, Luigi!\n\
-I remember you being\n\
-taller actually...\n\
+Weren't you originally a bit\n\
+a bit taller...\n\
 \n\
-Anyway, the Devs decided\n\
-against us, but in this\n\
-new adventure you will\n\
+Anyway, the Devs gave us\n\
+the scrap, but in this\n\
+new journey you will\n\
 have the chance to see\n\
 my old pals in all their\n\
 rawness! Some of them\n\
 are very gorgeous\n\
-but others...\n\
-Give you goose-polygons!\n\
-It's such a shame they\n\
-deleted us...\n\
-\n\
+but others... Well\n\
+lets just say they might\n\
+give you goose-polygons!\n\
+It's such a waste that\n\
+they forgot about us...\n\
 But thanks to some\n\
 guys we are back more\n\
 threatening than ever!\n\
 \n\
-Enough with chit-chats\n\
-and LET'S FIGHT!!!"))
+Enough with the chit-chat\n\
+LET'S FIGHT!!!"))
 
 DEFINE_DIALOG(DIALOG_018, 1, 4, 30, 200, _("\
 I'm sleeping because...\n\
