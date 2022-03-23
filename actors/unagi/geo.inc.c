@@ -14,7 +14,7 @@ const GeoLayout unagi_geo[] = {
                hmsBegin()
                   hmsJoint(RM_SURF,RCP_animed_swim0,475,0,0)  /* ,nn_body5,(0) */
       hmsBegin()
-        hmsBboard(0,0,0)
+        hmsBboard(430,-70,0)
         hmsBegin()
         hmsSelect(2, geo_switch_anim_state)
             hmsBegin()
@@ -22,7 +22,7 @@ const GeoLayout unagi_geo[] = {
 
                             hmsGroup()
                             hmsBegin()
-                GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 2000, 0, 0, 0, 0, 0, RCP_star1),//make texture transparent
+                GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 0, 0, 0, 0, 0, 0, RCP_star1),
             hmsEnd()
           hmsEnd()
       hmsEnd()
