@@ -668,7 +668,7 @@ BAD_RETURN(f32) calc_y_to_curr_floor(f32 *posOff, f32 posMul, f32 posBound, f32 
 
     if (!(sMarioCamState->action & ACT_FLAG_METAL_WATER)) {
         //! @bug this should use sMarioGeometry.waterHeight
-        if (floorHeight < (waterHeight = find_water_level(sMarioCamState->pos[0], sMarioCamState->pos[2]))) {
+        if (floorHeight < (waterHeight = sMarioGeometry.waterHeight)) {
             floorHeight = waterHeight;
         }
     }
@@ -6595,10 +6595,10 @@ s16 camera_course_processing(struct Camera *c) {
                     if (sMarioGeometry.currFloorType == SURFACE_BOSS_FIGHT_CAMERA) {
                         set_camera_mode_boss_fight(c);
                     } else {
-                        if (c->mode == CAMERA_MODE_CLOSE) {
-                            transition_to_camera_mode(c, CAMERA_MODE_RADIAL, 60);
+                        if (c->mode == CAMERA_MODE_FREE_ROAM) {
+                            transition_to_camera_mode(c, CAMERA_MODE_FREE_ROAM, 60);
                         } else {
-                            set_camera_mode_radial(c, 60);
+                            set_camera_mode(c, CAMERA_MODE_FREE_ROAM, 1);
                         }
                     }
                 }

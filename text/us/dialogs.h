@@ -32,7 +32,7 @@ press [Z] and then [B],\n\
 this fast kick will help\n\
 you take out some\n\
 enemies from the front.\n\
-TRIPLE JUMP TWIRL\n\
+BACKFLIP TWIRL\n\
 perfect for high jumps\n\
 and smooth landing.\n\
      That's it\n\

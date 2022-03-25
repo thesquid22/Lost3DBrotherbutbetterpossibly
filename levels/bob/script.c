@@ -53,12 +53,12 @@ const LevelScript level_bob_entry[] = {
         WARP_NODE(/*id*/ 0xF0, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x32, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ 0xF1, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x02, /*destNode*/ 0x64, /*flags*/ WARP_NO_CHECKPOINT),
         // Objects
-        OBJECT(/*model*/ MODEL_NONE,              /*pos*/  -976, -1103,  4477, /*angle*/ 0,  90, 0, /*behParam*/ 0x000A0000, /*beh*/ bhvSpinAirborneWarp), //SpinAirborne Spawn
+        OBJECT(/*model*/ MODEL_NONE,              /*pos*/  -976, -1014,  4477, /*angle*/ 0,  90, 0, /*behParam*/ 0x000A0000, /*beh*/ bhvSpinAirborneWarp), //SpinAirborne Spawn
         OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,    /*pos*/  2230,  2023, -4008, /*angle*/ 0,   0, 0, /*behParam*/ 0x01000000, /*beh*/ bhvStar,              /*acts*/ ALL_ACTS), //2 PRECISE JUMP TO THE FORTRESS
         OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,    /*pos*/  -5373,     3, -7070, /*angle*/ 0,   0, 0, /*behParam*/ 0x04000000, /*beh*/ bhvStar,              /*acts*/ ACT_5),    //5 HOVERING OVER THE FLYING ISLANDS
         OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,    /*pos*/   350, -1712,  4048, /*angle*/ 0,   0, 0, /*behParam*/ 0x03000000, /*beh*/ bhvHiddenRedCoinStar, /*acts*/ ALL_ACTS), //4 8 RED COINS SCATTERED OVER THE FORTRESS
         OBJECT(/*model*/ MODEL_NONE,              /*pos*/   274,   460,  1513,/*angle*/  0,   0, 0, /*behParam*/ 0x00610000, /*beh*/ bhvPoleGrabbing),     //Grabbing Pole
-        OBJECT_WITH_ACTS(/*model*/ MODEL_BOBOMB_BUDDY,   /*pos*/ 2460, -282,  -6735, /*angle*/ 0, 0, 0,   /*behParam*/ DIALOG_002 << 16, /*beh*/ bhvBobombBuddy,   /*acts*/ ACT_6), //Easter Egg Buddy
+        //OBJECT_WITH_ACTS(/*model*/ MODEL_BOBOMB_BUDDY,   /*pos*/ 2460, -282,  -6735, /*angle*/ 0, 0, 0,   /*behParam*/ DIALOG_002 << 16, /*beh*/ bhvBobombBuddy,   /*acts*/ ACT_1), //Easter Egg Buddy
 
         // Enemies (some in *macro.inc.c*)
         OBJECT(/*model*/ MODEL_WHOMP,             /*pos*/   3449, -1155, -400, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvSmallWhomp),         //Whomp

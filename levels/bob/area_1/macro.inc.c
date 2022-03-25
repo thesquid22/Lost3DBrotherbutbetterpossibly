@@ -1,5 +1,6 @@
 const MacroObject bob_area_1_macro_objs[] = {
 	MACRO_OBJECT(/*preset*/ macro_bobomb,                    /*yaw*/   0, /*pos*/ 3179,    -1155, -4174),
+    MACRO_OBJECT(/*preset*/ macro_bobomb,                    /*yaw*/   0, /*pos*/ 2452,    -1974, 4437),
     MACRO_OBJECT(/*preset*/ macro_box_star_3,                /*yaw*/   0, /*pos*/ -1107,  -47,  -7098), //3 WHAT'S IN THE FLYING ISLAND?
 	MACRO_OBJECT(/*preset*/ macro_red_coin,                  /*yaw*/   0, /*pos*/ 2754,   -1235,  780), //8 RED COINS SCATTERED OVER THE FORTRESS
     MACRO_OBJECT(/*preset*/ macro_red_coin,                  /*yaw*/   0, /*pos*/ -2363,   -898,  -4094), //8 RED COINS SCATTERED OVER THE FORTRESS
