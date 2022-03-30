@@ -569,6 +569,14 @@ void print_hud_char_umlaut(s16 x, s16 y, u8 chr) {
 }
 #endif
 
+void print_ia4_text(s16 x, s16 y, u8 red, u8 green, u8 blue, u8 alpha, const u8 *str) {
+    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
+
+    gDPSetEnvColor(gDisplayListHead++, red, green, blue, alpha);
+    print_generic_string(x, y, str);
+}
+
 /**
  * Prints a hud string depending of the hud table list defined.
  */
@@ -2760,6 +2768,7 @@ s16 render_pause_courses_and_castle(void) {
 
 #define HUD_PRINT_HISCORE         0
 #define HUD_PRINT_CONGRATULATIONS 1
+#define HUD_PRINT_NOSCORE         2
 
 void print_hud_course_complete_string(s8 str) {
 #ifdef VERSION_EU
@@ -2775,6 +2784,7 @@ void print_hud_course_complete_string(s8 str) {
     };
 #else
     u8 textHiScore[] = { TEXT_HUD_HI_SCORE };
+	u8 textNoScore[] = { TEXT_HUD_NO_SCORE };
     u8 textCongratulations[] = { TEXT_HUD_CONGRATULATIONS };
 #endif
 
@@ -2784,19 +2794,15 @@ void print_hud_course_complete_string(s8 str) {
     gDPSetEnvColor(gDisplayListHead++, colorFade, colorFade, colorFade, 255);
 
     if (str == HUD_PRINT_HISCORE) {
-#ifdef VERSION_EU
-        print_hud_lut_string(HUD_LUT_GLOBAL, get_str_x_pos_from_center_scale(160, textHiScore[gInGameLanguage], 12.0f),
-                  36, textHiScore[gInGameLanguage]);
-#else
         print_hud_lut_string(HUD_LUT_GLOBAL, TXT_HISCORE_X, TXT_HISCORE_Y, textHiScore);
-#endif
-    } else { // HUD_PRINT_CONGRATULATIONS
-#ifdef VERSION_EU
-        print_hud_lut_string(HUD_LUT_GLOBAL, get_str_x_pos_from_center_scale(160, textCongratulations[gInGameLanguage], 12.0f),
-                  67, textCongratulations[gInGameLanguage]);
-#else
+    }
+	
+	if (str == HUD_PRINT_CONGRATULATIONS)	{ // HUD_PRINT_CONGRATULATIONS
         print_hud_lut_string(HUD_LUT_GLOBAL, TXT_CONGRATS_X, 67, textCongratulations);
-#endif
+    }
+	
+	if (str == HUD_PRINT_NOSCORE) {
+        print_hud_lut_string(HUD_LUT_GLOBAL, TXT_HISCORE_X, TXT_HISCORE_Y, textNoScore);
     }
 
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
@@ -2824,7 +2830,9 @@ void print_hud_course_complete_coins(s16 x, s16 y) {
 
         if (gGotFileCoinHiScore) {
             print_hud_course_complete_string(HUD_PRINT_HISCORE);
-        }
+        } else {
+			print_hud_course_complete_string(HUD_PRINT_NOSCORE);
+		}
     } else {
         if ((gCourseDoneMenuTimer & 1) || gHudDisplay.coins > 70) {
             gCourseCompleteCoins++;
@@ -2962,30 +2970,15 @@ void render_course_complete_lvl_info_and_hud_str(void) {
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
-#define TXT_SAVEOPTIONS_X x + 10
-#elif defined(VERSION_US)
-#define TXT_SAVEOPTIONS_X x + 12
-#elif defined(VERSION_EU)
-#define TXT_SAVEOPTIONS_X xOffset
-#endif
-#if defined(VERSION_JP) || defined(VERSION_SH)
-#define TXT_SAVECONT_Y 2
-#define TXT_SAVEQUIT_Y 18
-#define TXT_CONTNOSAVE_Y 38
-#else
-#define TXT_SAVECONT_Y 0
-#define TXT_SAVEQUIT_Y 20
-#define TXT_CONTNOSAVE_Y 40
-#endif
+f32 xval = 115;
+f32 yval = 160;
+u8 stringnum = 0;
+#define Xone 115
+#define Xtwo 200
+#define Yone 160
+#define Ytwo 70
 
-#ifdef VERSION_EU
-#define X_VAL9 xOffset - 12
-void render_save_confirmation(s16 y, s8 *index, s16 sp6e)
-#else
-#define X_VAL9 x
-void render_save_confirmation(s16 x, s16 y, s8 *index, s16 sp6e)
-#endif
+void render_save_confirmation(s8 *index)
 {
 #ifdef VERSION_EU
     u8 textSaveAndContinueArr[][24] = {
@@ -3017,19 +3010,82 @@ void render_save_confirmation(s16 x, s16 y, s8 *index, s16 sp6e)
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-
-    print_generic_string(TXT_SAVEOPTIONS_X, y + TXT_SAVECONT_Y, textSaveAndContinue);
-    print_generic_string(TXT_SAVEOPTIONS_X, y - TXT_SAVEQUIT_Y, textSaveAndQuit);
-    print_generic_string(TXT_SAVEOPTIONS_X, y - TXT_CONTNOSAVE_Y, textContinueWithoutSave);
+	
+	switch (*index) {
+		case 1:
+		stringnum = 1;
+		break;
+		case 2:
+		stringnum = 2;
+		break;
+		case 3:
+		stringnum = 3;
+		break;
+		
+	}
+	print_ia4_text(Xone + 2, Yone - 2, 0, 0, 0, 128, textSaveAndContinue);
+	print_ia4_text(Xtwo + 2, Xone - 2, 0, 0, 0, 128, textSaveAndQuit);
+	print_ia4_text(Xone + 2, Ytwo - 2, 0, 0, 0, 128, textContinueWithoutSave);
+    print_ia4_text(Xone, Yone, 255, 255, 255, 255, textSaveAndContinue);
+    print_ia4_text(Xtwo, Xone, 255, 255, 255, 255, textSaveAndQuit);
+    print_ia4_text(Xone, Ytwo, 255, 255, 255, 255, textContinueWithoutSave);
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
-    create_dl_translation_matrix(MENU_MTX_PUSH, X_VAL9, y - ((index[0] - 1) * sp6e), 0);
+    create_dl_translation_matrix(MENU_MTX_PUSH, xval, yval, 0);
 
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
     gSPDisplayList(gDisplayListHead++, dl_draw_triangle);
 
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
+}
+//#define Xone 115
+//#define Xtwo 200
+//#define Yone 160
+//#define Ytwo 70
+void save_arrow(void) {
+	switch (stringnum) {
+		case 1:
+		if (xval > 100) {
+			xval = xval - 15;
+		} else {
+			xval = 100;
+		}
+		if (yval < Yone) {
+			yval = yval + 9;
+		} else {
+			yval = Yone;
+		}
+		break;
+		case 2:
+		if (xval < 185) {
+			xval = xval + 15;
+		} else {
+			xval = 185;
+		}
+		if (yval > Xone) {
+			yval = yval - 9;
+		} else if (yval < Xone) {
+			yval = yval + 9;
+		} else {
+			yval = Xone;
+		}
+		break;
+		case 3:
+		if (xval > 100) {
+			xval = xval - 15;
+		} else {
+			xval = 100;
+		}
+		if (yval > Ytwo) {
+			yval = yval - 9;
+		} else {
+			yval = Ytwo;
+		}
+	}
+	//print_text_fmt_int (200, 100, "%d", xval);
+	//print_text_fmt_int (200, 75, "%d", yval);
+	//print_text_fmt_int (200, 50, "%d", stringnum);
 }
 
 s16 render_course_complete_screen(void) {
@@ -3051,7 +3107,7 @@ s16 render_course_complete_screen(void) {
         case DIALOG_STATE_VERTICAL:
             shade_screen();
             print_hud_course_complete_coins(30, 123);
-            render_save_confirmation(100, 200, &gDialogLineNum, 20);
+            render_save_confirmation(&gDialogLineNum);
 
 
             if (gCourseDoneMenuTimer > 110

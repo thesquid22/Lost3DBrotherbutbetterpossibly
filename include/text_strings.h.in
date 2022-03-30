@@ -203,6 +203,7 @@
 #define TEXT_CATCH _("CATCH")
 #define TEXT_CLEAR _("CLEAR")
 #define TEXT_HUD_HI_SCORE _("HI SCORE")
+#define TEXT_HUD_NO_SCORE _("NO SCORE")
 
 // Save Options
 #define TEXT_SAVE_AND_CONTINUE _("SAVE & CONTINUE")
