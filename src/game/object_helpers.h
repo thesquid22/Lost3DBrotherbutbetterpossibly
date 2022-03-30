@@ -178,6 +178,7 @@ f32 increment_velocity_toward_range(f32 value, f32 center, f32 zeroThreshold, f3
 s32 obj_check_if_collided_with_object(struct Object *obj1, struct Object *obj2);
 void cur_obj_set_behavior(const BehaviorScript *behavior);
 void obj_set_behavior(struct Object *obj, const BehaviorScript *behavior);
+void obj_set_model(struct Object *obj, s32 modelID);
 s32 cur_obj_has_behavior(const BehaviorScript *behavior);
 s32 obj_has_behavior(struct Object *obj, const BehaviorScript *behavior);
 f32 cur_obj_lateral_dist_from_mario_to_home(void);
@@ -278,6 +279,7 @@ s32 cur_obj_can_mario_activate_textbox_2(f32 radius, f32 height);
 s32 cur_obj_update_dialog(s32 actionArg, s32 dialogFlags, s32 dialogID, UNUSED s32 unused);
 s32 cur_obj_update_dialog_with_cutscene(s32 actionArg, s32 dialogFlags, s32 cutsceneTable, s32 dialogID);
 s32 cur_obj_has_model(u16 modelID);
+s32 obj_has_model(struct Object *obj, u16 modelID);
 void cur_obj_align_gfx_with_floor(void);
 s32 mario_is_within_rectangle(s16 minX, s16 maxX, s16 minZ, s16 maxZ);
 void cur_obj_shake_screen(s32 shake);

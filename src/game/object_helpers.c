@@ -1465,6 +1465,10 @@ void obj_set_behavior(struct Object *obj, const BehaviorScript *behavior) {
     obj->behavior = segmented_to_virtual(behavior);
 }
 
+void obj_set_model(struct Object *obj, s32 modelID) {
+    obj->header.gfx.sharedChild = gLoadedGraphNodes[modelID];
+}
+
 s32 cur_obj_has_behavior(const BehaviorScript *behavior) {
     if (o->behavior == segmented_to_virtual(behavior)) {
         return TRUE;
@@ -2747,12 +2751,19 @@ s32 cur_obj_update_dialog_with_cutscene(s32 actionArg, s32 dialogFlags, s32 cuts
     return dialogResponse;
 }
 
+
+s32 obj_has_model(struct Object *obj, u16 modelID) {
+    return (obj->header.gfx.sharedChild == gLoadedGraphNodes[modelID]);
+}
+
 s32 cur_obj_has_model(u16 modelID) {
     if (o->header.gfx.sharedChild == gLoadedGraphNodes[modelID]) {
         return TRUE;
     } else {
         return FALSE;
     }
+	struct Object *obj;
+    return obj_has_model(obj, modelID);
 }
 
 void cur_obj_align_gfx_with_floor(void) {
