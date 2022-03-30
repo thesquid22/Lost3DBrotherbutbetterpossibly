@@ -2970,9 +2970,10 @@ void render_course_complete_lvl_info_and_hud_str(void) {
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 }
 
-f32 xval = 115;
+f32 xval = 186;
 f32 yval = 160;
 u8 stringnum = 0;
+u8 pingpong = 0;
 #define Xone 115
 #define Xtwo 200
 #define Yone 160
@@ -3023,12 +3024,12 @@ void render_save_confirmation(s8 *index)
 		break;
 		
 	}
-	print_ia4_text(Xone + 2, Yone - 2, 0, 0, 0, 128, textSaveAndContinue);
-	print_ia4_text(Xtwo + 2, Xone - 2, 0, 0, 0, 128, textSaveAndQuit);
-	print_ia4_text(Xone + 2, Ytwo - 2, 0, 0, 0, 128, textContinueWithoutSave);
-    print_ia4_text(Xone, Yone, 255, 255, 255, 255, textSaveAndContinue);
-    print_ia4_text(Xtwo, Xone, 255, 255, 255, 255, textSaveAndQuit);
-    print_ia4_text(Xone, Ytwo, 255, 255, 255, 255, textContinueWithoutSave);
+	print_ia4_text(202, Yone - 2, 0, 0, 0, 128, textSaveAndContinue);
+	print_ia4_text(240, Xone - 2, 0, 0, 0, 128, textSaveAndQuit);
+	print_ia4_text(167 + 2, Ytwo - 2, 0, 0, 0, 128, textContinueWithoutSave);
+    print_ia4_text(200, Yone, 255, 255, 255, 255, textSaveAndContinue);
+    print_ia4_text(238, Xone, 255, 255, 255, 255, textSaveAndQuit);
+    print_ia4_text(165, Ytwo, 255, 255, 255, 255, textContinueWithoutSave);
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
@@ -3039,18 +3040,42 @@ void render_save_confirmation(s8 *index)
 
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
 }
-//#define Xone 115
-//#define Xtwo 200
+//150 200
+//188 238
+//115 165
+//#define Xone 115 
+//#define Xtwo 200 
 //#define Yone 160
 //#define Ytwo 70
 void save_arrow(void) {
 	switch (stringnum) {
 		case 1:
-		if (xval > 100) {
+		if (xval > 185) {
 			xval = xval - 15;
-		} else {
-			xval = 100;
+			pingpong=1;
 		}
+		switch (pingpong) {
+			case 0:
+			xval = 185;
+			break;
+			case 1:
+			if (xval < 186 && xval > 165) {
+				xval--;
+			}
+			if (xval < 166) {
+				pingpong = 2;
+			}
+			break;
+			case 2:
+			if (xval > 164 && xval < 186) {
+				xval++;
+			}
+			if (xval > 184) {
+				pingpong = 1;
+			}
+			break;
+		}
+			
 		if (yval < Yone) {
 			yval = yval + 9;
 		} else {
@@ -3058,10 +3083,27 @@ void save_arrow(void) {
 		}
 		break;
 		case 2:
-		if (xval < 185) {
+		if (xval < 203) {
 			xval = xval + 15;
-		} else {
-			xval = 185;
+			pingpong=2;
+		} 
+		switch (pingpong) {
+			case 1:
+			if (xval > 202) {
+				xval--;
+			}
+			if (xval < 204) {
+				pingpong = 2;
+			}
+			break;
+			case 2:
+			if (xval > 202 && xval < 224) {
+				xval++;
+			}
+			if (xval > 222) {
+				pingpong = 1;
+			}
+			break;
 		}
 		if (yval > Xone) {
 			yval = yval - 9;
@@ -3072,10 +3114,27 @@ void save_arrow(void) {
 		}
 		break;
 		case 3:
-		if (xval > 100) {
+		if (xval > 150) {
 			xval = xval - 15;
-		} else {
-			xval = 100;
+			pingpong=1;
+		}
+		switch (pingpong) {
+			case 1:
+			if (xval < 151 && xval > 129) {
+				xval--;
+			}
+			if (xval < 131) {
+				pingpong = 2;
+			}
+			break;
+			case 2:
+			if (xval > 129 && xval < 151) {
+				xval++;
+			}
+			if (xval > 149) {
+				pingpong = 1;
+			}
+			break;
 		}
 		if (yval > Ytwo) {
 			yval = yval - 9;
@@ -3083,8 +3142,7 @@ void save_arrow(void) {
 			yval = Ytwo;
 		}
 	}
-	//print_text_fmt_int (200, 100, "%d", xval);
-	//print_text_fmt_int (200, 75, "%d", yval);
+	
 	//print_text_fmt_int (200, 50, "%d", stringnum);
 }
 
@@ -3173,7 +3231,10 @@ s16 render_menus_and_dialogs(void) {
 
         render_dialog_entries();
         gDialogColorFadeTimer = (s16) gDialogColorFadeTimer + 0x1000;
-    }
+    } else {
+		pingpong=0;
+		xval = 186;
+	}
     return mode;
 }
 void dialog_set_options_avail(s8 opt) {

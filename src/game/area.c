@@ -369,7 +369,14 @@ void render_game(void) {
         gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, BORDER_HEIGHT, SCREEN_WIDTH,
                       SCREEN_HEIGHT - BORDER_HEIGHT);
         render_hud();
-		save_arrow();
+		if (gMenuMode != -1) {
+			save_arrow();
+		} else {
+			pingpong=0;
+			xval = 186;
+		}
+		//print_text_fmt_int (200, 100, "%d", xval);
+		//print_text_fmt_int (200, 75, "%d", pingpong);
 
         gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         render_text_labels();
