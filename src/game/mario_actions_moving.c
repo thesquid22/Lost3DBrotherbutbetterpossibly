@@ -1536,14 +1536,14 @@ s32 act_crouch_slide(struct MarioState *m) {
         return set_mario_action(m, ACT_BUTT_SLIDE, 0);
     }
 
-    /*if (m->actionTimer < 30) {
+    if (m->actionTimer < 30) {
         m->actionTimer++;
         if (m->input & INPUT_A_PRESSED) {
             if (m->forwardVel > 10.0f) {
                 return set_jumping_action(m, ACT_LONG_JUMP, 0);
             }
         }
-    }*/
+    }
 
     if (m->input & INPUT_B_PRESSED) {
         return set_mario_action(m, ACT_SQUAT_KICKING, 0);
@@ -1937,10 +1937,6 @@ s32 act_long_jump_land(struct MarioState *m) {
 
     if (common_landing_cancels(m, &sLongJumpLandAction, set_jumping_action)) {
         return TRUE;
-    }
-
-    if (!(m->input & INPUT_NONZERO_ANALOG)) {
-        play_sound_if_no_flag(m, SOUND_MARIO_UH2_2, MARIO_MARIO_SOUND_PLAYED);
     }
 
     common_landing_action(m,

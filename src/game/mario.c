@@ -547,7 +547,7 @@ struct Surface *resolve_and_return_wall_collisions(Vec3f pos, f32 offset, f32 ra
 f32 vec3f_find_ceil(Vec3f pos, f32 height, struct Surface **ceil) {
     UNUSED f32 unused;
 
-    return find_ceil(pos[0], height + 80.0f, pos[2], ceil);
+    return find_ceil(pos[0], height + 3.0f, pos[2], ceil);
 }
 
 /**
@@ -788,11 +788,11 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
             m->forwardVel *= 0.8f;
             break;
 
-        /*case ACT_BACKFLIP:
+        case ACT_BACKFLIP:
             m->marioObj->header.gfx.animInfo.animID = -1;
             m->forwardVel = -16.0f;
             set_mario_y_vel_based_on_fspeed(m, 62.0f, 0.0f);
-            break;*/
+            break;
 
         case ACT_TRIPLE_JUMP:
             set_mario_y_vel_based_on_fspeed(m, 73.5f, 0.0f);
@@ -941,7 +941,7 @@ static u32 set_mario_action_moving(struct MarioState *m, u32 action, UNUSED u32 
  */
 static u32 set_mario_action_submerged(struct MarioState *m, u32 action, UNUSED u32 actionArg) {
     if (action == ACT_METAL_WATER_JUMP || action == ACT_HOLD_METAL_WATER_JUMP) {
-    set_mario_y_vel_based_on_fspeed(m, 42.0f, 0.0f);
+    set_mario_y_vel_based_on_fspeed(m, 32.0f, 0.0f);
     }
 
     return action;
@@ -1267,7 +1267,7 @@ void debug_print_speed_action_normal(struct MarioState *m) {
  */
 void update_mario_button_inputs(struct MarioState *m) {
     if (m->action != ACT_DEBUG_FREE_MOVE && m->controller->buttonPressed & L_JPAD) {
-        //set_mario_action(m, ACT_DEBUG_FREE_MOVE, 0);
+        set_mario_action(m, ACT_DEBUG_FREE_MOVE, 0);
     }
 
     if (m->controller->buttonPressed & A_BUTTON) {
@@ -1348,7 +1348,7 @@ void update_mario_geometry_inputs(struct MarioState *m) {
         m->floorHeight = find_floor(m->pos[0], m->pos[1], m->pos[2], &m->floor);
     }
 
-    m->ceilHeight = vec3f_find_ceil(&m->pos[0], m->floorHeight, &m->ceil);
+    m->ceilHeight = vec3f_find_ceil(m->pos, m->pos[1], &m->ceil);
     gasLevel = find_poison_gas_level(m->pos[0], m->pos[2]);
     m->waterLevel = find_water_level(m->pos[0], m->pos[2]);
 
@@ -1443,8 +1443,8 @@ void set_submerged_cam_preset_and_spawn_bubbles(struct MarioState *m) {
         camPreset = m->area->camera->mode;
 
         if (m->action & ACT_FLAG_METAL_WATER) {
-            if (camPreset != CAMERA_MODE_CLOSE) {
-                set_camera_mode(m->area->camera, CAMERA_MODE_CLOSE, 1);
+            if (camPreset != CAMERA_MODE_BEHIND_MARIO) {
+                set_camera_mode(m->area->camera, CAMERA_MODE_BEHIND_MARIO, 1);
             }
         } else {
             if ((heightBelowWater > 800.0f) && (camPreset != CAMERA_MODE_BEHIND_MARIO)) {

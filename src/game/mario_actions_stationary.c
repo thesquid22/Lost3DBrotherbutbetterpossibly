@@ -621,7 +621,7 @@ s32 act_crouching(struct MarioState *m) {
 
     //disables backflips and replaces them with jumps
     if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_JUMP, 0);
+        return set_jumping_action(m, ACT_BACKFLIP, 0);
     }
 
     if (m->input & INPUT_OFF_FLOOR) {
@@ -790,7 +790,7 @@ s32 act_start_crouching(struct MarioState *m) {
     }
 
     if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_JUMP, 0);
+        return set_jumping_action(m, ACT_BACKFLIP, 0);
     }
 
     if (m->input & INPUT_ABOVE_SLIDE) {
@@ -1032,7 +1032,12 @@ s32 act_long_jump_land_stop(struct MarioState *m) {
 
     landing_step(m, !m->marioObj->oMarioLongJumpIsSlow ? MARIO_ANIM_CROUCH_FROM_FAST_LONGJUMP
                                                        : MARIO_ANIM_CROUCH_FROM_SLOW_LONGJUMP,
-                 ACT_CROUCHING);
+                 ACT_IDLE);
+
+    if (!m->marioObj->oMarioLongJumpIsSlow && (is_anim_at_end(m))) {
+        return drop_and_set_mario_action(m, ACT_CROUCH_SLIDE, 0);
+    }
+
     return FALSE;
 }
 
