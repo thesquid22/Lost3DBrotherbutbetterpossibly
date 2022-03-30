@@ -19,10 +19,12 @@ const GeoLayout unagi_geo[] = {
         hmsSelect(2, geo_switch_anim_state)
             hmsBegin()
                             hmsGroup()
-
                             hmsGroup()
                             hmsBegin()
-                GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 0, 0, 0, 0, 0, 0, RCP_star1),
+							GEO_SCALE(0x00, 32384),
+							hmsBegin()
+                GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 0, 25, 0, 0, 0, 0, RCP_star1),
+				hmsEnd()
             hmsEnd()
           hmsEnd()
       hmsEnd()
