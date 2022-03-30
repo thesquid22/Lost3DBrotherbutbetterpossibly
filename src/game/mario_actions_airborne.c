@@ -14,6 +14,7 @@
 #include "mario_actions_moving.h"
 #include "save_file.h"
 #include "rumble_init.h"
+#include "object_helpers.h"
 
 void play_flip_sounds(struct MarioState *m, s16 frame1, s16 frame2, s16 frame3) {
     s32 animFrame = m->marioObj->header.gfx.animInfo.animFrame;
@@ -678,8 +679,11 @@ s32 act_long_jump(struct MarioState *m) {
         play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
         m->actionState = 1;
     }
-
-    common_air_action_step(m, ACT_LONG_JUMP_LAND, animation, AIR_STEP_CHECK_LEDGE_GRAB);
+	if (m->marioObj->oMarioLongJumpIsSlow) {
+        common_air_action_step(m, ACT_LONG_JUMP_LAND, animation, AIR_STEP_CHECK_LEDGE_GRAB);
+    } else {
+		common_air_action_step(m, ACT_FAST_LONG_JUMP_LAND, animation, AIR_STEP_CHECK_LEDGE_GRAB);
+    }
 #ifdef VERSION_SH
     if (m->action == ACT_LONG_JUMP_LAND) {
         queue_rumble_data(5, 40);

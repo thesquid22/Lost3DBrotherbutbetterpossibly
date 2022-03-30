@@ -1529,6 +1529,37 @@ s32 act_hold_butt_slide(struct MarioState *m) {
     return cancel;
 }
 
+s32 act_fast_long_jump_land(struct MarioState *m) {
+	s32 cancel;
+	
+	set_mario_animation (m, MARIO_ANIM_CROUCH_FROM_FAST_LONGJUMP);
+
+    if (m->input & INPUT_ABOVE_SLIDE) {
+        return set_mario_action(m, ACT_BUTT_SLIDE, 0);
+    }
+
+    if (m->actionTimer < 30) {
+        m->actionTimer++;
+        if (m->input & INPUT_A_PRESSED) {
+            if (m->forwardVel > 10.0f) {
+                return set_jumping_action(m, ACT_LONG_JUMP, 0);
+            }
+        }
+    }
+
+    if (m->input & INPUT_A_PRESSED) {
+        return set_jumping_action(m, ACT_JUMP, 0);
+    }
+
+	if (cur_obj_check_if_at_animation_end()) {
+		return set_mario_action(m, ACT_CROUCH_SLIDE, 0);
+	}
+	
+	cancel = common_slide_action_with_jump(m, ACT_CROUCH_SLIDE, ACT_JUMP, ACT_FREEFALL,
+                                           MARIO_ANIM_CROUCH_FROM_FAST_LONGJUMP);
+    return cancel;
+}
+
 s32 act_crouch_slide(struct MarioState *m) {
     s32 cancel;
 
@@ -2099,6 +2130,7 @@ s32 mario_execute_moving_action(struct MarioState *m) {
         case ACT_QUICKSAND_JUMP_LAND:      cancel = act_quicksand_jump_land(m);      break;
         case ACT_HOLD_QUICKSAND_JUMP_LAND: cancel = act_hold_quicksand_jump_land(m); break;
         case ACT_LONG_JUMP_LAND:           cancel = act_long_jump_land(m);           break;
+		case ACT_FAST_LONG_JUMP_LAND:      cancel = act_fast_long_jump_land(m);      break;
     }
     /* clang-format on */
 
