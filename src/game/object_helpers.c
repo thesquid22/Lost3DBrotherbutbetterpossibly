@@ -2757,12 +2757,12 @@ s32 obj_has_model(struct Object *obj, u16 modelID) {
 }
 
 s32 cur_obj_has_model(u16 modelID) {
+    struct Object *obj;
     if (o->header.gfx.sharedChild == gLoadedGraphNodes[modelID]) {
         return TRUE;
     } else {
         return FALSE;
     }
-	struct Object *obj;
     return obj_has_model(obj, modelID);
 }
 
