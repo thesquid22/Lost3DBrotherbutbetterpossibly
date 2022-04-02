@@ -3030,6 +3030,7 @@ void render_save_confirmation(s8 *index)
     print_ia4_text(200, Yone, 255, 255, 255, 255, textSaveAndContinue);
     print_ia4_text(238, Xone, 255, 255, 255, 255, textSaveAndQuit);
     print_ia4_text(165, Ytwo, 255, 255, 255, 255, textContinueWithoutSave);
+	save_arrow();
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
@@ -3056,7 +3057,7 @@ void save_arrow(void) {
 		}
 		switch (pingpong) {
 			case 0:
-			xval = 185;
+			xval = 186;
 			break;
 			case 1:
 			if (xval < 186 && xval > 165) {
@@ -3232,8 +3233,9 @@ s16 render_menus_and_dialogs(void) {
         render_dialog_entries();
         gDialogColorFadeTimer = (s16) gDialogColorFadeTimer + 0x1000;
     } else {
-		pingpong=0;
+		pingpong = 0;
 		xval = 186;
+		yval = 260;
 	}
     return mode;
 }
