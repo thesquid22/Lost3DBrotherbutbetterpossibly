@@ -3048,7 +3048,8 @@ void render_save_confirmation(s8 *index)
 //#define Xtwo 200 
 //#define Yone 160
 //#define Ytwo 70
-void save_arrow(void) {
+
+save_arrow(void) {
 	switch (stringnum) {
 		case 1:
 		if (xval > 185) {
