@@ -3,13 +3,13 @@
     "sample_bank": "instruments",
     "envelopes": {
         "envelope0": [
-            [6, 32700],
+            [2, 32700],
             [1, 32700],
             [32700, 29430],
             "hang"
         ],
         "envelope1": [
-            [6, 32700],
+            [2, 32700],
             [1, 32700],
             [32700, 29430],
             "hang"
@@ -39,9 +39,9 @@
             "hang"
         ],
         "envelope6": [
-            [6, 32700],
-            [298, 0],
-            [1, 0],
+            [2, 32700],
+            [103, 24112],
+            [409, 0],
             "hang"
         ],
         "envelope7": [
@@ -53,22 +53,14 @@
     },
     "instruments": {
         "inst0": {
-            "release_rate": 15,
-            "normal_range_lo": 27,
-            "normal_range_hi": 46,
-            "envelope": "envelope0",
-            "sound_lo": "23_strings_1",
-            "sound": "24_strings_2",
-            "sound_hi": "25_strings_3"
+            "release_rate": 10,
+            "envelope": "envelope1",
+            "sound": "22_boys_choir"
         },
         "inst1": {
-            "release_rate": 15,
-            "normal_range_lo": 27,
-            "normal_range_hi": 46,
+            "release_rate": 10,
             "envelope": "envelope1",
-            "sound_lo": "23_strings_1",
-            "sound": "24_strings_2",
-            "sound_hi": "25_strings_3"
+            "sound": "22_boys_choir"
         },
         "inst2": {
             "release_rate": 208,
@@ -160,12 +152,12 @@
         "inst5": {
             "release_rate": 10,
             "envelope": "envelope6",
-            "sound": "49_tinepiano"
+            "sound": "42_vibraphone"
         },
         "inst6": {
             "release_rate": 10,
             "envelope": "envelope7",
-            "sound": "49_tinepiano"
+            "sound": "42_vibraphone"
         }
     },
     "instrument_list": [
